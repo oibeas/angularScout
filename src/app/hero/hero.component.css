@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;600;800&display=swap');
+.jumbotron {
+    background-image: url(../../assets/imghero02.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: rgb(185, 179, 179);
+    background-blend-mode: multiply;
+    height: 100vh;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 200;
+    color: #FAD44E
+}
+
+.display-2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    color: #33A485;
+}
