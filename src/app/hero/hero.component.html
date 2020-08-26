@@ -1,5 +1,12 @@
 <div class="jumbotron">
-    <app-navbar></app-navbar>
+    <div class="empty"></div>
+    <div class="navbar" (scroll)="onWindowScroll($event)">
+        <a class="active pl-3" href="javascript:void(0)">Home</a>
+        <a href="javascript:void(0)">Rutas</a>
+        <a href="javascript:void(0)">Eventos</a>
+        <a href="javascript:void(0)">Info</a>
+        <a class="pr-3" href="javascript:void(0)">Grupos Scout</a>
+    </div>
     <div class="container">
         <h1 class="display-2">scouts</h1>
         <p class="lead">be prepared...</p>
