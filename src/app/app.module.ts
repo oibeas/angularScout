@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { HeroComponent } from './hero/hero.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarRutasComponent } from './sidebar-rutas/sidebar-rutas.component';
-import { HomeRutasComponent } from './home-rutas/home-rutas.component';
-import { HomeEventosComponent } from './home-eventos/home-eventos.component';
 import { SidebarEventosComponent } from './sidebar-eventos/sidebar-eventos.component';
 import { MapaGruposComponent } from './mapa-grupos/mapa-grupos.component';
 import { ListaRutasComponent } from './lista-rutas/lista-rutas.component';
@@ -19,6 +17,7 @@ import { FormRutaComponent } from './form-ruta/form-ruta.component';
 import { FormEventoComponent } from './form-evento/form-evento.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { ContenedorComponent } from './contenedor/contenedor.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,6 @@ import { HomeComponent } from './home/home.component';
     HeroComponent,
     NavbarComponent,
     SidebarRutasComponent,
-    HomeRutasComponent,
-    HomeEventosComponent,
     SidebarEventosComponent,
     MapaGruposComponent,
     ListaRutasComponent,
@@ -38,7 +35,8 @@ import { HomeComponent } from './home/home.component';
     FormRutaComponent,
     FormEventoComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ContenedorComponent
   ],
   imports: [
     BrowserModule,
