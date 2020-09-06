@@ -30,6 +30,7 @@
   background-color: transparent;
   color: white;
   height: 80px;
+  z-index: 100;
 }
 
 .navbar a {

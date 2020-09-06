@@ -1,1 +1,30 @@
-<p>mapa-grupos works!</p>
+<div class="container-fluid frame">
+    <div class="container">
+        <div class="row pt-4">
+            <div class="col-8">
+                <agm-map (mapClick)="clickedMap($event)" [mapTypeId]="mapTypeId" [fitBounds]="true">
+                    <agm-marker (markerClick)="clickedMarker(infoWindow)" *ngFor="let grupo of grupos "
+                        [latitude]="grupo.latitud" [longitude]="grupo.longitud" [agmFitBounds] [iconUrl]="{}">
+                        <agm-info-window #infoWindow>
+                            <h4>{{grupo.nombre}}</h4>
+                            <p>{{grupo.fecha_creacion}}</p>
+                            <p>{{grupo.direccion}}</p>
+                            <a [href]="grupo.sitio_web" target="_blank">{{grupo.sitio_web}}</a>
+                        </agm-info-window>
+                    </agm-marker>
+                </agm-map>
+                <button (click)="getCurrentPosition()">Obtener dirección actual</button>
+            </div>
+            <div class="col-4 addScroll">
+                <ul *ngFor="let grupo of grupos">
+                    <li>
+                        <h4>{{grupo.nombre}}</h4>
+                        <p class="my-0">{{grupo.direccion}}</p>
+                        <p class="my-0">{{grupo.ciudad}}</p>
+                        <a class="my-0" [href]="grupo.sitio_web" target="_blank">{{grupo.sitio_web}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

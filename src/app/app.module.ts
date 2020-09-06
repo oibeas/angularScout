@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +42,11 @@ import { ContenedorComponent } from './contenedor/contenedor.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAOm-KmhlnD0YZjTqaHnRkPoSvA3ieyzRc'
+    }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
