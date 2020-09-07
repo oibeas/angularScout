@@ -1,14 +1,15 @@
 export class Grupo {
     id: number;
     nombre: string;
-    direccion: string;
+    fecha_creacion: number;
     ciudad: string;
-    provincia: string;
-    imagen: string;
-    fecha_creacion: string;
-    email: string;
-    sitio_web: string;
-    descripcion: string;
-    latitud: string;
+    direccion: string;
+    cp: number;
     longitud: string;
+    latitud: string;
+    email: string;
+    web: string;
+    twitter: string;
+    facebook: string;
+    telefono: number;
 }

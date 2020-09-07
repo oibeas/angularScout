@@ -9,7 +9,7 @@
                             <h4>{{grupo.nombre}}</h4>
                             <p>{{grupo.fecha_creacion}}</p>
                             <p>{{grupo.direccion}}</p>
-                            <a [href]="grupo.sitio_web" target="_blank">{{grupo.sitio_web}}</a>
+                            <a [href]="grupo.web" target="_blank">{{grupo.web}}</a>
                         </agm-info-window>
                     </agm-marker>
                 </agm-map>
@@ -21,7 +21,7 @@
                         <h4>{{grupo.nombre}}</h4>
                         <p class="my-0">{{grupo.direccion}}</p>
                         <p class="my-0">{{grupo.ciudad}}</p>
-                        <a class="my-0" [href]="grupo.sitio_web" target="_blank">{{grupo.sitio_web}}</a>
+                        <a class="my-0" [href]="grupo.web" target="_blank">{{grupo.web}}</a>
                     </li>
                 </ul>
             </div>
