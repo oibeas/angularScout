@@ -3,6 +3,7 @@
         <div class="row pt-4">
             <div class="col-8">
                 <agm-map (mapClick)="clickedMap($event)" [mapTypeId]="mapTypeId" [fitBounds]="true">
+
                     <agm-marker (markerClick)="clickedMarker(infoWindow)" *ngFor="let grupo of grupos "
                         [latitude]="grupo.latitud" [longitude]="grupo.longitud" [agmFitBounds] [iconUrl]="{}">
                         <agm-info-window #infoWindow>
@@ -12,6 +13,7 @@
                             <a [href]="grupo.web" target="_blank">{{grupo.web}}</a>
                         </agm-info-window>
                     </agm-marker>
+
                 </agm-map>
                 <button (click)="getCurrentPosition()">Obtener dirección actual</button>
             </div>

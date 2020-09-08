@@ -5,8 +5,8 @@ export class Grupo {
     ciudad: string;
     direccion: string;
     cp: number;
-    longitud: string;
-    latitud: string;
+    longitud: number;
+    latitud: number;
     email: string;
     web: string;
     twitter: string;

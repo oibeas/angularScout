@@ -13,19 +13,35 @@ agm-map {
     height: 100vh;
 }
 
-.container-fluid .container .row .addScroll {
-    overflow-y: auto;
-    height: 60vh;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+.container-fluid .container .row .addScroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+
+.container-fluid .container .row .addScroll::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5
 }
 
-.container-fluid .container .row  .addScroll::-webkit-scrollbar {
-    display: none;
+.container-fluid .container .row .addScroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #82B1FF;
+}
+
+.container-fluid .container .row .addScroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 60vh;
+    scrollbar-color: #82B1FF #F5F5F5;;
+    scrollbar-width: thin;
 }
 
 .container-fluid .container .row  .addScroll ul {
     list-style-type: none;
+    padding-inline-start: 10px;
 }
 
 .container-fluid .container .row  .addScroll li {
