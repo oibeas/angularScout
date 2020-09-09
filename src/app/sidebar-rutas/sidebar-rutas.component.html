@@ -1,1 +1,22 @@
-<p>sidebar-rutas works!</p>
+<div class="container">
+    <h2>MEJORES RUTAS</h2>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">nombre</th>
+            </tr>
+
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let ruta of rutas">
+                <th scope="row">{{ruta.id}}</th>
+                <td>{{ruta.nombre}}</td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

@@ -1,1 +1,36 @@
-<p>lista-rutas works!</p>
+<div class="container">
+    <h2>LISTA DE RUTAS</h2>
+    <div class="addScroll">
+        <div class="card mb-3 shadow bg-white rounded" style="max-width: 640px;" *ngFor="let ruta of rutas">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <div class="foto" style="background-image: url({{ruta.arrImagenes[0]}});">
+                        <!-- <img [src]="ruta.arrImagenes[0]" class="card-img" alt="..."> -->
+                    </div>
+                    <small>{{ruta.usuario}}</small>
+
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-bolder">{{ruta.nombre}}</h5>
+                        <p class="card-text font-weight-lighter descripcion">{{ruta.descripcion}}</p>
+                        <div class="cardfooter">
+                            <p class="card-text"><small class="text-muted">Distancia:
+                                    <strong>{{ruta.distancia}}km</strong></small></p>
+                            <p class="card-text"><small class="text-muted">Duracion:
+                                    <strong>{{ruta.duracion}}h</strong></small></p>
+                            <p class="card-text"><small class="text-muted">Altura máxima:
+                                    <strong>{{ruta.altitud_max}}m</strong></small>
+                            </p>
+                            <p class="card-text circular" [ngSwitch]="ruta.circular">
+                                <small class="text-muted">Tipo:</small>
+                                <img src="assets/circularNo.png" *ngSwitchCase="0">
+                                <img src="assets/circularSi.png" *ngSwitchCase="1">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

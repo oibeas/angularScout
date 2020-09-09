@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarRutasService } from '../sidebar-rutas.service';
+import { Ruta } from '../models/ruta.models'
+
 
 @Component({
   selector: 'app-sidebar-rutas',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarRutasComponent implements OnInit {
 
-  constructor() { }
+  rutas: Ruta[];
+
+  constructor(private sidebarRutasService: SidebarRutasService) { }
 
   ngOnInit(): void {
+    this.sidebarRutasService.getAll()
+      .then(response => {
+        // console.log(response);
+        this.rutas = response;
+
+      })
+      .catch(error => {
+        console.log(error.status);
+
+      });
   }
 
 }
