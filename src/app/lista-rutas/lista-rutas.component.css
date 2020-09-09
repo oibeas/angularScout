@@ -1,0 +1,26 @@
+.cardfooter {
+    display: flex;
+}
+
+.cardfooter p {
+    margin-right: 10px;
+}
+
+.descripcion {
+    height: 70px;
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+}
+
+.circular {
+    justify-content: right;
+    align-content: flex-end;
+    height: auto;
+}
+
+.foto {
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+}

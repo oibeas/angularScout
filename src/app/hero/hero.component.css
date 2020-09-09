@@ -1,13 +1,13 @@
 .jumbotron {
-  background-image: url(../../assets/imghero02.jpg);
+  background-image: url(../../assets/imghero21.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   background-color: rgb(185, 179, 179);
   background-blend-mode: multiply;
   height: 150vh;
-  font-family: 'Kanit', sans-serif;
-  font-weight: 200;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
   color: #FAD44E;
   margin: 0;
   padding: 0;
@@ -15,9 +15,10 @@
 }
 
 .display-2 {
-  font-family: 'Kanit', sans-serif;
-  font-weight: 600;
-  color: #33A485;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #6bd1b6;
   margin-top: 100px;
 }
 
@@ -66,4 +67,8 @@
 
 .sticky a:hover {
   color: #33A485;
+}
+
+.scroll {
+  width: 150px;
 }
