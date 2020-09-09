@@ -35,18 +35,26 @@ agm-map {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 60vh;
-    scrollbar-color: #82B1FF #F5F5F5;;
+    scrollbar-color: #82B1FF #F5F5F5;
     scrollbar-width: thin;
 }
 
 .container-fluid .container .row  .addScroll ul {
     list-style-type: none;
-    padding-inline-start: 10px;
+    padding-inline-start: 0px;
+    margin-bottom: 0rem;
 }
 
 .container-fluid .container .row  .addScroll li {
-    border-bottom: 1px solid grey;
+    cursor: pointer;
+    padding-top: 10px;
     padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+    
+}
+
+.container-fluid .container .row  .addScroll li:hover {
+    background-color: honeydew;
 }
 
 
