@@ -12,4 +12,5 @@ export class Grupo {
     twitter: string;
     facebook: string;
     telefono: number;
+    asociacion: string;
 }

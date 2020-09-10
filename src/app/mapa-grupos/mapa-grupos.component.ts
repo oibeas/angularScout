@@ -32,6 +32,10 @@ export class MapaGruposComponent implements OnInit {
     this.located = false
   }
 
+  getById($event) {
+    console.log($event);
+  }
+
   clickedMarker(infowindow) {
     if (this.previous) {
       this.previous.close();

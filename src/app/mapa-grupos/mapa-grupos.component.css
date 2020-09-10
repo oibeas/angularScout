@@ -3,6 +3,11 @@ agm-map {
     height: 60vh;
 }
 
+.mapa-modal {
+    width: 80%;
+    height: 50vh;
+    
+}
 .container-fluid .frame {
     height: 100vh;
     background-color: rgb(245, 245, 245);
@@ -39,25 +44,45 @@ agm-map {
     scrollbar-width: thin;
 }
 
-.container-fluid .container .row  .addScroll ul {
+.container-fluid .container .row .addScroll ul {
     list-style-type: none;
     padding-inline-start: 0px;
     margin-bottom: 0rem;
 }
 
-.container-fluid .container .row  .addScroll li {
+.container-fluid .container .row .addScroll ul li {
     cursor: pointer;
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid grey;
-    
 }
 
-.container-fluid .container .row  .addScroll li:hover {
+.container-fluid .container .row  .addScroll ul li:hover {
     background-color: honeydew;
 }
 
+.container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-header, .modal-body, .modal-footer  {
+    cursor: auto;
+}
 
+.container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-header, .modal-footer {
+    background-color: honeydew;
+    width: 100%;
+}
 
+.container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-header .modal-title img:last-child {
+    max-width: 200px;
+    max-height: 50px;
+    text-align: right;
+    border-radius: 10px;
+    margin-left: 100px;
+}
 
+.container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-body {
+    background-color: lavender;
+}
+
+.container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-body .row .col-6 .shadow {
+    min-height: 50vh;
+}
 

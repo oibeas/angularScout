@@ -16,4 +16,8 @@ export class GruposService {
   getAll(): Promise<Grupo[]> {
     return this.httpClient.get<Grupo[]>(this.baseUrl).toPromise();
   }
+
+  getById(): Promise<Grupo> {
+    return this.httpClient.get<Grupo>(`${this.baseUrl}/:grupoId`).toPromise();
+  }
 }

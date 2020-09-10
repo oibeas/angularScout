@@ -3,7 +3,6 @@
         <div class="row pt-4">
             <div class="col-8">
                 <agm-map (mapClick)="clickedMap($event)" [mapTypeId]="mapTypeId" [fitBounds]="true">
-
                     <agm-marker (markerClick)="clickedMarker(infoWindow)" *ngFor="let grupo of grupos "
                         [latitude]="grupo.latitud" [longitude]="grupo.longitud" [agmFitBounds] [iconUrl]="{}">
                         <agm-info-window #infoWindow>
@@ -13,44 +12,113 @@
                             <a [href]="grupo.web" target="_blank">{{grupo.web}}</a>
                         </agm-info-window>
                     </agm-marker>
-
                 </agm-map>
                 <button (click)="getCurrentPosition()">Obtener dirección actual</button>
             </div>
             <div class="col-4 addScroll">
-                <ul id="modalActivate" data-toggle="modal" data-target="#exampleModalPreview"
+                <ul id="modalActivate" data-toggle="modal" [attr.data-target]="'#modal'+grupo.id"
                     *ngFor="let grupo of grupos">
                     <li>
                         <h4>{{grupo.nombre}}</h4>
                         <p class="my-0">{{grupo.direccion}}</p>
                         <p class="my-0">{{grupo.ciudad}}</p>
                         <a class="my-0" [href]="grupo.web" target="_blank">{{grupo.web}}</a>
+                        <div class="modal fade right" [id]="'modal'+grupo.id" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-side modal-bottom-right modal-notify modal-info"
+                                role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header" [ngSwitch]="grupo.asociacion">
+                                        <div>
+                                            <h4 class="modal-title heading-lead" id="exampleModalPreviewLabel">
+                                                <img src="../../assets/promesa64.png" alt="">
+                                                <strong>{{grupo.nombre}}</strong>
+                                                <img src="../../assets/ASDE.png" alt="" *ngSwitchCase="'ASDE'">
+                                                <img src="../../assets/AESGE(azul).jpg" alt="" *ngSwitchCase="'AESGE'">
+                                                <img src="../../assets/AISG.png" alt="" *ngSwitchCase="'AISG'">
+                                                <img src="../../assets/CMS.jpg" alt="" *ngSwitchCase="'CMS'">
+                                                <img src="../../assets/FCEG.png" alt="" *ngSwitchCase="'FCEG'">
+                                                <img src="../../assets/FEG.jpg" alt="" *ngSwitchCase="'FEG'">
+                                                <img src="../../assets/FSRM.png" alt="" *ngSwitchCase="'FSRM'">
+                                                <img src="../../assets/MSC.png" alt="" *ngSwitchCase="'MSC'">
+                                                <img src="../../assets/WFIS.png" alt="" *ngSwitchCase="'WFIS'">
+                                            </h4>
+                                        </div>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="shadow p-3 mb-2 bg-white rounded">
+                                                    <h4>
+                                                        <strong>Ficha:</strong>
+                                                    </h4>
+                                                    <p><strong>Nombre:</strong> {{grupo.nombre}}</p>
+                                                    <p><strong>Año de fundación:</strong> {{grupo.fecha_creacion}}</p>
+                                                    <p><strong>Dirección:</strong> {{grupo.direccion}}</p>
+                                                    <p><strong>Ciudad: </strong> {{grupo.ciudad}}</p>
+                                                    <p><strong>Código Postal:</strong> {{grupo.cp}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="shadow p-3 mb-2 bg-white rounded">
+                                                    <h4>
+                                                        <strong>Contacto:</strong>
+                                                    </h4>
+                                                    <div *ngIf="grupo.email != ''">
+                                                        <img src="../../assets/gmail.png" alt="">
+                                                        <p>{{grupo.email}}</p>
+                                                    </div>
+                                                    <div *ngIf="grupo.telefono != 0">
+                                                        <img src="../../assets/gmail.png" alt="">
+                                                        <p>{{grupo.telefono}}</p>
+                                                    </div>
+                                                    <div *ngIf="grupo.web != ''">
+                                                        <img src="../../assets/web24.png" alt="">
+                                                        <a href="" target="_blank"> {{grupo.web}}</a>
+                                                    </div>
+                                                    <div *ngIf="grupo.twitter != ''">
+                                                        <img src="../../assets/twitter24.png" alt="">
+                                                        <a href="" target="_blank"> {{grupo.twitter}}</a>
+                                                    </div>
+                                                    <div *ngIf="grupo.facebook != ''">
+                                                        <img src="../../assets/facebook24.png" alt="">
+                                                        <a href="" target="_blank"> {{grupo.facebook}}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <a class="btn-lg btn-success" target="_blank"
+                                                    [href]="'https://maps.google.com/?q='+'grupo scout'+' '+grupo.nombre+' '+grupo.direccion+' '+grupo.ciudad+''">Dónde
+                                                    encontrarnos</a>
+                                                <!-- <agm-map class="mapa-modal" (mapClick)="clickedMap($event)"
+                                                    [mapTypeId]="mapTypeId" [fitBounds]="true" [zoom]='12'>
+                                                    <agm-marker (markerClick)="clickedMarker(infoWindow)"
+                                                        [latitude]="grupo.latitud" [longitude]="grupo.longitud"
+                                                        [agmFitBounds]
+                                                        [iconUrl]='{ url: "../../assets/explorar64.png","scaledSize": {"height": 50, "width": 50}}'>
+                                                    </agm-marker>
+                                                </agm-map>
+                                                <button (click)="getCurrentPosition()">Obtener dirección actual</button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
             <!-- Modal -->
-            <div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-side modal-bottom-right" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalPreviewLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal -->
 
+            <!-- Modal -->
         </div>
     </div>
 
