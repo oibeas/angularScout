@@ -32,6 +32,7 @@
   color: white;
   height: 80px;
   z-index: 100;
+  padding: 0rem 1rem;
 }
 
 .navbar a {
@@ -48,10 +49,6 @@
 .navbar a.active {
   color: #33A485;
 }
-
-/* .content {
-    padding: 16px;
-  } */
 
 .sticky {
   background-color: #1a1a2e;
@@ -70,5 +67,6 @@
 }
 
 .scroll {
-  width: 150px;
+  width: 65px;
+  padding-right: 10px;
 }
