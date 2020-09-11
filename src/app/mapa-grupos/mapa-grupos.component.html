@@ -63,29 +63,30 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <div class="shadow p-3 mb-2 bg-white rounded">
+                                                <div class="contacto shadow p-3 mb-2 bg-white rounded">
                                                     <h4>
                                                         <strong>Contacto:</strong>
                                                     </h4>
                                                     <div *ngIf="grupo.email != ''">
-                                                        <img src="../../assets/gmail.png" alt="">
+                                                        <img src="../../assets/gmail24.png" alt="">
                                                         <p>{{grupo.email}}</p>
                                                     </div>
                                                     <div *ngIf="grupo.telefono != 0">
-                                                        <img src="../../assets/gmail.png" alt="">
+                                                        <img src="../../assets/telefono.png" alt="">
                                                         <p>{{grupo.telefono}}</p>
                                                     </div>
                                                     <div *ngIf="grupo.web != ''">
                                                         <img src="../../assets/web24.png" alt="">
-                                                        <a href="" target="_blank"> {{grupo.web}}</a>
+                                                        <a [href]="grupo.web" target="_blank"> {{grupo.web}}</a>
                                                     </div>
                                                     <div *ngIf="grupo.twitter != ''">
                                                         <img src="../../assets/twitter24.png" alt="">
-                                                        <a href="" target="_blank"> {{grupo.twitter}}</a>
+                                                        <a [href]="grupo.twitter" target="_blank"> {{grupo.twitter}}</a>
                                                     </div>
                                                     <div *ngIf="grupo.facebook != ''">
                                                         <img src="../../assets/facebook24.png" alt="">
-                                                        <a href="" target="_blank"> {{grupo.facebook}}</a>
+                                                        <a [href]="grupo.facebook" target="_blank">
+                                                            {{grupo.facebook}}</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -93,22 +94,12 @@
                                                 <a class="btn-lg btn-success" target="_blank"
                                                     [href]="'https://maps.google.com/?q='+'grupo scout'+' '+grupo.nombre+' '+grupo.direccion+' '+grupo.ciudad+''">Dónde
                                                     encontrarnos</a>
-                                                <!-- <agm-map class="mapa-modal" (mapClick)="clickedMap($event)"
-                                                    [mapTypeId]="mapTypeId" [fitBounds]="true" [zoom]='12'>
-                                                    <agm-marker (markerClick)="clickedMarker(infoWindow)"
-                                                        [latitude]="grupo.latitud" [longitude]="grupo.longitud"
-                                                        [agmFitBounds]
-                                                        [iconUrl]='{ url: "../../assets/explorar64.png","scaledSize": {"height": 50, "width": 50}}'>
-                                                    </agm-marker>
-                                                </agm-map>
-                                                <button (click)="getCurrentPosition()">Obtener dirección actual</button> -->
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
+                                        <button type="button" class="btn btn-danger"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
                             </div>

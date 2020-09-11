@@ -57,7 +57,7 @@ agm-map {
     border-bottom: 1px solid grey;
 }
 
-.container-fluid .container .row  .addScroll ul li:hover {
+.container-fluid .container .row .addScroll ul li:hover {
     background-color: honeydew;
 }
 
@@ -75,14 +75,32 @@ agm-map {
     max-height: 50px;
     text-align: right;
     border-radius: 10px;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 
 .container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-body {
     background-color: lavender;
 }
 
+.container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-body .row {
+    height: 74vh;
+}
+
 .container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-body .row .col-6 .shadow {
     min-height: 50vh;
 }
 
+.modal-body .row .col-6 .contacto p {
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-body .row .col-6 .contacto img, a {
+    margin: 10px 3px;
+}
+
+.modal-body .row .col-12 {
+    display: flex;
+    justify-content: center;
+}
