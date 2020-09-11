@@ -1,0 +1,15 @@
+.descripcion {
+    height: 120px;
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+}
+
+.card {
+    min-height: 350px;
+}
+
+/* .card-img-top {
+    max-height: 100px;
+    width: auto;
+} */

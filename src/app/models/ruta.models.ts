@@ -17,4 +17,5 @@ export class Ruta {
     duracion: Date;
     usuarioId: number;
     usuario: string;
+    puntuacion: number;
 }

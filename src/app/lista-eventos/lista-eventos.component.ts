@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Evento } from '../models/evento.models';
+import { ListaEventosService } from '../lista-eventos.service';
 
 @Component({
   selector: 'app-lista-eventos',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaEventosComponent implements OnInit {
 
-  constructor() { }
+  eventos: Evento[];
+
+  constructor(private listaEventosService: ListaEventosService) { }
 
   ngOnInit(): void {
+    this.listaEventosService.getAll()
+      .then(response => {
+        this.eventos = response;
+        console.log(response);
+
+      }).catch(error => {
+        console.log(error.status);
+      });
   }
 
 }

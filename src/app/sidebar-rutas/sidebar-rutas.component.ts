@@ -15,11 +15,10 @@ export class SidebarRutasComponent implements OnInit {
   constructor(private sidebarRutasService: SidebarRutasService) { }
 
   ngOnInit(): void {
-    this.sidebarRutasService.getAll()
+    this.sidebarRutasService.getMejores()
       .then(response => {
         // console.log(response);
         this.rutas = response;
-
       })
       .catch(error => {
         console.log(error.status);

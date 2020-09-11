@@ -10,11 +10,10 @@ export class SidebarRutasService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/rutas'
+    this.baseUrl = 'http://localhost:3000/api/rutas/puntuacion/mejores'
   }
 
-  getAll(): Promise<Ruta[]> {
-
+  getMejores(): Promise<Ruta[]> {
     return this.httpClient.get<Ruta[]>(this.baseUrl).toPromise();
   }
 
