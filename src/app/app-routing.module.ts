@@ -9,6 +9,7 @@ import { FormRutaComponent } from './form-ruta/form-ruta.component';
 import { FormEventoComponent } from './form-evento/form-evento.component';
 import { HomeComponent } from './home/home.component';
 import { MapaGruposComponent } from './mapa-grupos/mapa-grupos.component';
+import { InfoSeccionesComponent } from './info-secciones/info-secciones.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'grupos', component: MapaGruposComponent },
   // { path: 'grupos/:grupoId', component: ListaRutasComponent },
   { path: 'info', component: InfoMovimientoComponent },
+  { path: 'secciones', component: InfoSeccionesComponent },
   { path: '**', redirectTo: '/home' }
 ];
 
