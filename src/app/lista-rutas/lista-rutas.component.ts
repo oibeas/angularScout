@@ -22,9 +22,7 @@ export class ListaRutasComponent implements OnInit {
           const arrImagenes = ruta.imagenes.split(',');
           ruta.arrImagenes = arrImagenes
         }
-
-        console.log(this.rutas);
-
+        // console.log(this.rutas);
       })
       .catch(error => {
         console.log(error.status);

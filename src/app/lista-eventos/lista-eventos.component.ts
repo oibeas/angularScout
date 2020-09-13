@@ -17,8 +17,7 @@ export class ListaEventosComponent implements OnInit {
     this.listaEventosService.getAll()
       .then(response => {
         this.eventos = response;
-        console.log(response);
-
+        // console.log(response);
       }).catch(error => {
         console.log(error.status);
       });

@@ -1,0 +1,44 @@
+agm-map {
+    width: 100%;
+    height: 70vh;
+}
+
+.container-fluid {
+    background-color: lavender;
+}
+
+.info {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.info-usuario {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+}
+
+.datos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 320px;
+}
+
+.fotos div div {
+    width: 100%;
+    height: 100%;
+}
+
+.fotos div div img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.fotos div div:hover {
+    border: 2px solid white;
+    transition: 0.3s;
+}

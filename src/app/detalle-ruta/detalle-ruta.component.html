@@ -1,1 +1,117 @@
-<p>detalle-ruta works!</p>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row pt-5 mb-4">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-8">
+                        <div>
+                            <h3>{{ruta.nombre}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-9">
+                        <div>
+                            <agm-map></agm-map>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col-12 mb-3 info-usuario">
+                                <div>
+                                    <h5>{{ruta.usuario}}Usuario</h5>
+                                </div>
+                            </div>
+                            <div class="col-12 info datos">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-flex bd-highlight mb-3">
+                                            <p class="card-text my-0 mx-auto p-2 bd-highlight"
+                                                [ngSwitch]="ruta.puntuacion">
+                                                <img src="assets/cinco.png" *ngSwitchCase="5">
+                                                <img src="assets/cuatro.png" *ngSwitchCase="4">
+                                                <img src="assets/tres.png" *ngSwitchCase="3">
+                                                <img src="assets/dos.png" *ngSwitchCase="2">
+                                                <img src="assets/uno.png" *ngSwitchCase="1">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div>
+                                            <p><strong>Distancia: </strong>{{ruta.distancia}} Km</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div>
+                                            <p><strong>Duración: </strong>{{ruta.duracion}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div>
+                                            <p><strong>Altitud min.: </strong>{{ruta.altitud_min}} m</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div>
+                                            <p><strong>Altitud máx.: </strong>{{ruta.altitud_max}} m</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div>
+                                            <p><strong>Dificultad: </strong>{{ruta.dificultad}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-5">
+            <div class="col-9">
+                <div class="mb-4">
+                    <h4>DESCRIPCIÓN DE LA RUTA:</h4>
+                </div>
+                <div class="info p-3">
+                    <p>{{ruta.descripcion}}</p>
+                </div>
+            </div>
+            <div class="col-3 fotos">
+                <div class="row">
+                    <div class="col-4 mb-2">
+                        <img src="../../assets/imghero03.jpg" alt="">
+                    </div>
+                    <div class="col-4 mb-2">
+                        <img src="https://s1.wklcdn.com/image_19/590908/6374193/5415487Master.jpg" alt="">
+                    </div>
+                    <div class="col-4 mb-2">
+                        <img src="../../assets/imghero03.jpg" alt="">
+                    </div>
+                    <div class="col-4 mb-2">
+                        <img src="../../assets/imghero03.jpg" alt="">
+                    </div>
+                    <div class="col-4 mb-2">
+                        <img src="../../assets/imghero03.jpg" alt="">
+                    </div>
+                    <div class="col-4 mb-2">
+                        <img src="../../assets/imghero03.jpg" alt="">
+                    </div>
+                    <div class="col-4 mb-2">
+                        <img src="../../assets/imghero03.jpg" alt="">
+                    </div>
+                    <div class="col-4 mb-2">
+                        <img src="../../assets/imghero03.jpg" alt="">
+                    </div>
+                    <div class="col-4 mb-2">
+                        <img src="../../assets/imghero03.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
