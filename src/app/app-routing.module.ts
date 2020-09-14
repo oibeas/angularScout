@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { ListaRutasComponent } from './lista-rutas/lista-rutas.component';
 import { DetalleRutaComponent } from './detalle-ruta/detalle-ruta.component';
 import { ListaEventosComponent } from './lista-eventos/lista-eventos.component';
@@ -10,6 +11,7 @@ import { FormEventoComponent } from './form-evento/form-evento.component';
 import { HomeComponent } from './home/home.component';
 import { MapaGruposComponent } from './mapa-grupos/mapa-grupos.component';
 import { InfoSeccionesComponent } from './info-secciones/info-secciones.component';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -27,8 +29,15 @@ const routes: Routes = [
   { path: '**', redirectTo: '/home' }
 ];
 
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+  onSameUrlNavigation: 'reload',
+  scrollOffset: [0, 100],
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,13 +1,81 @@
 <div class="jumbotron">
     <div class="empty"></div>
-    <div class="navbar smooth-scroll" (scroll)="onWindowScroll($event)">
-        <a [routerLink]="['/home']"><img src="../../assets/LogoBota100.png" alt=""></a>
-        <a class="active pl-3" href="javascript:void(0)">Home</a>
-        <a [routerLink]="['/rutas']">Rutas</a>
-        <a href="#link-grupos">Grupos Scout</a>
-        <a href="#link-eventos">Eventos</a>
-        <a class="pr-3" href="#link-info">Info</a>
-    </div>
+    <nav class="navbar smooth-scroll" (scroll)="onWindowScroll($event)">
+        <a routerLink="/home"><img src="../../assets/LogoBota100.png" alt=""></a>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Rutas
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="." fragment="listarutas">Rutas</a>
+                <a class="dropdown-item" href="#">Lista de rutas</a>
+                <a class="dropdown-item" href="#">Mejores rutas</a>
+                <a class="dropdown-item" href="#">Añade tu ruta</a>
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Eventos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="." fragment="listaeventos">Eventos</a>
+                <a class="dropdown-item" href="#">Eventos</a>
+                <a class="dropdown-item" href="#">Próximos eventos</a>
+                <a class="dropdown-item" href="#">Añade un evento nuevo</a>
+            </div>
+        </div>
+        <div>
+            <a href="#link-grupos" routerLink="." fragment="grupos">Grupos
+                Scout</a>
+        </div>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Info
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="." fragment="link-info">Info</a>
+                <a class="dropdown-item" href="#">Historia del Movimiento</a>
+                <a class="dropdown-item" href="#">Secciones</a>
+            </div>
+        </div>
+        <div class="pr-2">
+            <button type="button" class="btn btn-outline-success btn-block">Inicia sesión</button>
+        </div>
+    </nav>
+    <!-- <nav class="navbar navbar-expand-lg" (scroll)="onWindowScroll($event)">
+        <a class=" navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
     <div class="container">
         <h1 class="display-2">"Trata de dejar a este mundo en mejores condiciones de como lo encontraste.</h1>
         <p class="lead">Baden Powell</p>
