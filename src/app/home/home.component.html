@@ -1,11 +1,14 @@
 <app-hero></app-hero>
 <div class="container">
-    <div class="row">
+    <div class="row" id="listarutas">
         <app-lista-rutas class="col-12 col-lg-8 addScroll"></app-lista-rutas>
         <app-sidebar-rutas class="col-12 col-lg-4 addScroll"></app-sidebar-rutas>
     </div>
-    <div class="row">
-        <app-lista-eventos class="col-12 col-lg-8"></app-lista-eventos>
+    <hr>
+    <div class="row" id="listaeventos">
+        <app-lista-eventos class="col-12 col-lg-8 addScroll"></app-lista-eventos>
+        <app-sidebar-eventos class="col-12 col-lg-4 addScroll"></app-sidebar-eventos>
     </div>
 </div>
-<app-mapa-grupos></app-mapa-grupos>
+<app-mapa-grupos id="grupos"></app-mapa-grupos>
+<app-footer></app-footer>

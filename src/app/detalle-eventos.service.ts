@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ListaEventosService {
+export class DetalleEventosService {
 
   baseUrl: string;
 
@@ -13,8 +13,8 @@ export class ListaEventosService {
     this.baseUrl = 'http://localhost:3000/api/eventos'
   }
 
-  getAll(): Promise<Evento[]> {
-    return this.httpClient.get<Evento[]>(this.baseUrl).toPromise();
+  getById(pEventoId): Promise<Evento> {
+    return this.httpClient.get<Evento>(this.baseUrl + `/${pEventoId}`).toPromise();
   }
 
 }

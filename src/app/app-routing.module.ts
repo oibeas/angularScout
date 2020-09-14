@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { ListaRutasComponent } from './lista-rutas/lista-rutas.component';
 import { DetalleRutaComponent } from './detalle-ruta/detalle-ruta.component';
 import { ListaEventosComponent } from './lista-eventos/lista-eventos.component';
@@ -9,6 +8,8 @@ import { FormRutaComponent } from './form-ruta/form-ruta.component';
 import { FormEventoComponent } from './form-evento/form-evento.component';
 import { HomeComponent } from './home/home.component';
 import { MapaGruposComponent } from './mapa-grupos/mapa-grupos.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -18,15 +19,22 @@ const routes: Routes = [
   { path: 'rutas/:rutaId', component: DetalleRutaComponent },
   { path: 'eventos', component: ListaEventosComponent },
   { path: 'eventos/new', component: FormEventoComponent },
-  { path: 'eventos/eventoId', component: DetalleEventoComponent },
+  { path: 'eventos/:eventoId', component: DetalleEventoComponent },
   { path: 'grupos', component: MapaGruposComponent },
   // { path: 'grupos/:grupoId', component: ListaRutasComponent },
   { path: 'info', component: InfoMovimientoComponent },
   { path: '**', redirectTo: '/home' }
 ];
 
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+  onSameUrlNavigation: 'reload',
+  scrollOffset: [0, 100],
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

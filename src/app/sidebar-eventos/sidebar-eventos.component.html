@@ -1,1 +1,18 @@
-<p>sidebar-eventos works!</p>
+<div class="container">
+    <h2>ULTIMOS EVENTOS</h2>
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let evento of eventos; index as i">
+                <th scope="row">{{i+1}}</th>
+                <td class="font-weight-bolder">{{evento.nombre}}
+                    <p class="font-weight-lighter">{{evento.ciudad}}</p>
+                    <p class="font-weight-lighter">{{evento.fecha}}</p>
+
+                </td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

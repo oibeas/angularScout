@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { FormEventoComponent } from './form-evento/form-evento.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContenedorComponent } from './contenedor/contenedor.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { ContenedorComponent } from './contenedor/contenedor.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAOm-KmhlnD0YZjTqaHnRkPoSvA3ieyzRc'
     }),
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

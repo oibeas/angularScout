@@ -1,7 +1,15 @@
 <div class="jumbotron">
     <div class="empty"></div>
     <div class="navbar .smooth-scroll" (scroll)="onWindowScroll($event)">
-        <img src="../../assets/logo.png" alt="">
+        <a routerLink="/home">
+            <div class="logo d-flex align-items-center">
+                <img src="../../assets/LogoBota100sinfondo.png" alt="">
+                <div class="ml-3">
+                    <h3 class="font-weight-bolder">scRoutes</h3>
+                    <p class="font-weight-lighter">scouts social</p>
+                </div>
+            </div>
+        </a>
         <a class="active pl-3" href="javascript:void(0)">Home</a>
         <a href="#link-rutas">Rutas</a>
         <a href="javascript:void(0)">Grupos Scout</a>
@@ -12,11 +20,38 @@
         <h1 class="display-2">"Trata de dejar a este mundo en mejores condiciones de como lo encontraste.</h1>
         <p class="lead">Baden Powell</p>
         <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.
-        </p>
         <a class="btn btn-outline-warning btn-lg" href="#" role="button">Unete!!</a>
     </div>
     <div class="text-right">
         <img class="scroll" src="../../assets/scroll-down-2.gif" alt="">
     </div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 d-flex justify-content-around">
+                <div class="card m-1 shadow-lg rounded">
+                    <a routerLink="." fragment="listarutas" class="text-reset">
+                        <img src="../../assets/imghero21.jpg" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <h2 class="card-title text-monospace text-light">RUTAS</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="card m-1 shadow-lg rounded">
+                    <a routerLink="." fragment="listaeventos" class=" text-reset"><img src="../../assets/imghero16.jpg"
+                            class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <h2 class="card-title text-monospace text-light">EVENTOS</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="card m-1 shadow-lg rounded">
+                    <a routerLink="." fragment="grupos" class=" text-reset"><img src="../../assets/imghero08.jpg"
+                            class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <h2 class="card-title text-monospace text-light">GRUPOS</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>

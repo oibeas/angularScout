@@ -5,15 +5,15 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ListaEventosService {
+export class SidebarEventosService {
 
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/eventos'
+    this.baseUrl = 'http://localhost:3000/api/eventos/ultimos'
   }
 
-  getAll(): Promise<Evento[]> {
+  getUltimos(): Promise<Evento[]> {
     return this.httpClient.get<Evento[]>(this.baseUrl).toPromise();
   }
 

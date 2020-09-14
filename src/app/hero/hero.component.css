@@ -1,5 +1,5 @@
 .jumbotron {
-  background-image: url(../../assets/imghero21.jpg);
+  background-image: url(../../assets/imghero15.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -23,14 +23,14 @@
 }
 
 .empty {
-  height: 80px;
+  height: 100px;
 }
 
 .navbar {
   overflow: hidden;
   background-color: transparent;
   color: white;
-  height: 80px;
+  height: 100px;
   z-index: 100;
   padding: 0rem 1rem;
 }
@@ -70,3 +70,36 @@
   width: 65px;
   padding-right: 10px;
 }
+
+.card {
+  opacity: 80%;
+  max-width: 300px;
+  font-size: 10%;
+}
+
+.card:hover {
+  animation: pulse;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+}
+
+.navbar .logo:hover {
+  animation: shakeX;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+/* .navbar h3:hover {
+  animation: tada;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+} */
+
+/* 
+.navbar img {
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+} */

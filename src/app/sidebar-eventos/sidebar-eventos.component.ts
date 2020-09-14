@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarEventosService } from '../sidebar-eventos.service';
+import { Evento } from '../models/evento.models';
 
 @Component({
   selector: 'app-sidebar-eventos',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarEventosComponent implements OnInit {
 
-  constructor() { }
+  eventos: Evento[];
+
+  constructor(private sidebarEventosService: SidebarEventosService) { }
 
   ngOnInit(): void {
+    this.sidebarEventosService.getUltimos()
+      .then(response => {
+        this.eventos = response;
+      })
+      .catch(error => {
+        console.log(error.status);
+      })
   }
 
 }
