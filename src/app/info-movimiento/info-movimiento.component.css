@@ -1,6 +1,27 @@
 .container-fluid {
     text-align: center;
     background-color: lavender;
+    padding-top: 80px;
+}
+
+.navbar {
+    background-color: #1a1a2e;
+    position: fixed;
+    /* top: 0; */
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar img {
+    width: 80%;
+}
+
+.navbar a {
+    width: 20%;
+}
+
+.navbar a:hover {
+    color: #33A485;
 }
 
 .row {

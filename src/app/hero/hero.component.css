@@ -50,6 +50,10 @@
   color: #33A485;
 }
 
+.navbar img {
+  width: 60%;
+}
+
 .sticky {
   background-color: #1a1a2e;
   position: fixed;
