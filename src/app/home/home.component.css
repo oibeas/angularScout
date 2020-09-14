@@ -25,10 +25,42 @@
     background-color: #82B1FF;
 }
 
-#link-rutas::before {
+/* #link-rutas::before {
     display: block;
     content: " ";
     margin-top: -65px;
     height: 65px;
     visibility: hidden;
+} */
+
+/* estilos info-grupos */
+
+.card {
+    width: 80%;
+    margin: 5em auto;
 }
+
+.card:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.5s;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
+.card-img-overlay {
+    display: flex;
+    align-items: center;
+}
+
+.card-img-overlay h3 {
+    color: #6bd1b6;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+}
+

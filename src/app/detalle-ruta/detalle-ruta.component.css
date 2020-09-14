@@ -1,0 +1,67 @@
+agm-map {
+    width: 100%;
+    height: 70vh;
+}
+
+.container-fluid {
+    background-color: lavender;
+}
+
+.navbar {
+    background-color: #1a1a2e;
+    position: fixed;
+    /* top: 0; */
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar img {
+    width: 80%;
+}
+
+.navbar a {
+    width: 20%;
+}
+
+.navbar a:hover {
+    color: #33A485;
+}
+
+.container {
+    padding-top: 80px;
+}
+
+.info {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.info-usuario {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+}
+
+.datos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fotos div div {
+    width: 100%;
+    height: 100%;
+}
+
+.fotos div div img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.fotos div div:hover {
+    border: 2px solid white;
+    transition: 0.3s;
+}

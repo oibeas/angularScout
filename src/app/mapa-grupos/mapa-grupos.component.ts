@@ -32,10 +32,11 @@ export class MapaGruposComponent implements OnInit {
     this.located = false
   }
 
-  getById($event) {
-    console.log($event);
-  }
+  // getById($event) {
+  //   console.log($event);
+  // }
 
+  //Evento para que se cierre la ventana de información previa cuando pincho sobre una nueva
   clickedMarker(infowindow) {
     if (this.previous) {
       this.previous.close();
@@ -43,6 +44,7 @@ export class MapaGruposComponent implements OnInit {
     this.previous = infowindow;
   }
 
+  //Evento para que se cierre la ventana de información al hacer click sobre el mapa
   clickedMap($event) {
     if (this.previous != null) {
       this.previous.close()

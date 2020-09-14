@@ -18,4 +18,8 @@ export class ListaRutasService {
     return this.httpClient.get<Ruta[]>(this.baseUrl).toPromise();
   }
 
+  getById(pRutaId): Promise<Ruta> {
+    return this.httpClient.get<Ruta>(`${this.baseUrl}/${pRutaId}`).toPromise();
+  }
+
 }

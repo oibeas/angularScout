@@ -38,7 +38,11 @@
     object-fit: cover;
 }
 
-.impar {
+/* .par {
+    background-color: lavenderblush;
+} */
+
+.impar{
     background-color: white;
     border-radius: 10px;
 }

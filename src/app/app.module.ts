@@ -21,6 +21,7 @@ import { FormEventoComponent } from './form-evento/form-evento.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContenedorComponent } from './contenedor/contenedor.component';
+import { InfoSeccionesComponent } from './info-secciones/info-secciones.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ContenedorComponent } from './contenedor/contenedor.component';
     FormEventoComponent,
     FooterComponent,
     HomeComponent,
-    ContenedorComponent
+    ContenedorComponent,
+    InfoSeccionesComponent
   ],
   imports: [
     BrowserModule,

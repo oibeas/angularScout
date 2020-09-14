@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaRutasService } from '../lista-rutas.service';
+import { Ruta } from '../models/ruta.models';
+import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detalle-ruta',
@@ -7,9 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleRutaComponent implements OnInit {
 
-  constructor() { }
+  ruta: Ruta;
 
-  ngOnInit(): void {
+  constructor(
+    private listaRutasService: ListaRutasService,
+    private activatedRoute: ActivatedRoute,
+    private sanitizer: DomSanitizer
+  ) { }
+
+  sanitizeImageUrl(imageUrl: string): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }
 
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(async params => {
+      this.ruta = await this.listaRutasService.getById(params.rutaId)
+    });
+  }
 }
+
+//SIMILAR PARA GUARDAR LAS imagenes DE LA RUTA EN UN ARRAY Y LOS puntos_ruta EN OTRO.
+// .then(response => {
+//   this.rutas = response;
+//   for (let ruta of response) {
+//     const arrImagenes = ruta.imagenes.split(',');
+//     ruta.arrImagenes = arrImagenes
+//   
