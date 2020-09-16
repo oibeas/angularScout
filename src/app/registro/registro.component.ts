@@ -11,13 +11,16 @@ import { RegistroService } from '../registro.service';
 export class RegistroComponent implements OnInit {
 
   formulario: FormGroup;
+  formularioCreado: boolean;
 
   constructor(private registroService: RegistroService) {
+    this.formularioCreado = false;
 
     this.formulario = new FormGroup({
       usuario: new FormControl('', [
         Validators.required,
-        Validators.maxLength(45)
+        Validators.minLength(4),
+        Validators.maxLength(20)
       ]),
       nombre: new FormControl('', [Validators.maxLength(30)]),
       apellidos: new FormControl('', [Validators.maxLength(50)]),
@@ -49,6 +52,14 @@ export class RegistroComponent implements OnInit {
     console.log(this.formulario.value);
     const response = await this.registroService.postForm(this.formulario.value);
     console.log(response);
+    if (response.sucess) {
+      console.log('ok');
+      this.formulario.reset();
+      this.formularioCreado = true;
+    } else {
+      return { error: 'Fallo al crear usuario' };
+    }
+
   }
 
   passwordValidator(form) {

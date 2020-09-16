@@ -16,7 +16,7 @@ export class RegistroService {
 
   // Envio del formulario para registro de usuario
   postForm(pFormValue) {
-    return this.httpClient.post(`${this.baseUrl}/registro`, pFormValue).toPromise();
+    return this.httpClient.post<any>(`${this.baseUrl}/registro`, pFormValue).toPromise();
   }
 
 

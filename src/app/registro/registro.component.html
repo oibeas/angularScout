@@ -4,7 +4,7 @@
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()" novalidate>
             <div class="modal-content">
                 <div class="modal-header text-center mb-0">
-                    <h4 class="modal-title w-100 font-weight-bold">REGISTRO</h4>
+                    <h4 class="modal-title w-100 font-weight-bold">REGISTRO DE SCOUT</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -12,20 +12,21 @@
 
                 <div class="modal-body mx-3">
                     <label class="ml-5 text-muted mb-0"><small>Usuario:</small></label>
+                    <small class="error text-danger ml-5"
+                        *ngIf="formulario.controls.usuario.errors?.required && formulario.controls.usuario.touched">
+                        El campo usuario es requerido</small>
+                    <small class="error text-danger ml-5"
+                        *ngIf="formulario.controls.usuario.errors?.maxlength && formulario.controls.usuario.touched">
+                        El usuario no puede ser tan largo</small>
+                    <small class="error text-danger ml-5"
+                        *ngIf="formulario.controls.usuario.errors?.minlength && formulario.controls.usuario.touched">
+                        El usuario debe tener al menos 4 caracteres</small>
                     <div class="form-group d-flex mb-1">
                         <img src="../../assets/register01.png">
                         <input type="text" matInput placeholder="Introduce usuario" formControlName="usuario"
                             class="form-control validate">
-                        <p class="error"
-                            *ngIf="formulario.controls.usuario.errors?.required && formulario.controls.usuario.touched">
-                            El campo
-                            usuario es requerido</p>
-                        <p class="error"
-                            *ngIf="formulario.controls.usuario.errors?.maxlength && formulario.controls.usuario.touched">
-                            El
-                            campo
-                            usuario debe ser menor de 45 caracteres</p>
                     </div>
+
                     <label class="ml-5 mb-0 text-muted"><small>Nombre y apellidos:</small></label>
                     <div class="form-group d-flex mb-1">
                         <img src="../../assets/register01.png">
@@ -35,6 +36,12 @@
                             class="form-control validate ml-2">
                     </div>
                     <label class="ml-5 mb-0 text-muted"><small>Email:</small></label>
+                    <small class="error text-danger ml-5"
+                        *ngIf="formulario.controls.email.errors?.required && formulario.controls.email.touched">
+                        El email es requerido</small>
+                    <small class="error text-danger ml-5"
+                        *ngIf="formulario.controls.email.errors?.pattern && formulario.controls.email.touched">
+                        El e-mail no tiene un formato valido</small>
                     <div class="form-group d-flex mb-1">
                         <img src="../../assets/register02.png">
                         <input type="email" matInput placeholder="Introduce email" formControlName="email"
@@ -56,6 +63,9 @@
                     </div>
 
                     <label class="ml-5 mb-0 text-muted"><small>Fecha de nacimiento:</small></label>
+                    <small class="error text-danger ml-5"
+                        *ngIf="formulario.controls.fecha_nacimiento.errors?.required && formulario.controls.fecha_nacimiento.touched">
+                        La fecha de nacimiento es requerida</small>
                     <div class="form-group d-flex mb-1">
                         <img src="../../assets/register01.png">
                         <input type="date" matInput placeholder="Introduce tu fecha de nacimiento dd/mm/yyyy"
@@ -63,6 +73,12 @@
                     </div>
 
                     <label class="ml-5 mb-0 text-muted"><small>Contraseña:</small></label>
+                    <small class="error text-danger ml-5"
+                        *ngIf="formulario.controls.password.errors?.pattern && formulario.controls.password.touched">
+                        Debe tener entre 8 y 15 caracteres</small>
+                    <small class="error text-danger ml-5"
+                        *ngIf="formulario.controls.password.errors?.required && formulario.controls.password.touched">
+                        La contraseña es requerida</small>
                     <div class="form-group d-flex mb-1">
                         <img src="../../assets/register03.png">
                         <input type="password" matInput placeholder="Introduce contraseña" formControlName="password"
@@ -75,15 +91,15 @@
                         <input type="password" matInput placeholder="Repite contraseña"
                             formControlName="password_repeat" class="form-control validate">
                     </div>
-
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
                     <input type="submit" value="Registrar" [disabled]="!formulario.valid"
-                        class="btn btn-block btn-success">
+                        class="btn btn-block btn-primary">
+                    <button class="btn btn-success" *ngIf="formularioCreado" data-dismiss="modal">Scout
+                        añadido!!</button>
                 </div>
             </div>
         </form>
-        {{formulario.value|json}}
     </div>
 </div>
 

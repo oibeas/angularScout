@@ -24,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 import { ContenedorComponent } from './contenedor/contenedor.component';
 import { InfoSeccionesComponent } from './info-secciones/info-secciones.component';
 import { RegistroComponent } from './registro/registro.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { RegistroComponent } from './registro/registro.component';
     HomeComponent,
     ContenedorComponent,
     InfoSeccionesComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
