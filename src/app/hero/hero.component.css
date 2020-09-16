@@ -50,7 +50,7 @@
 }
 
 .navbar img {
-  width: 60%;
+  width: 100%;
 }
 
 .sticky {
@@ -86,7 +86,7 @@
   animation-iteration-count: infinite;
 }
 
-.logo {
+.navbar .logo {
   width: 80%;
 }
 
