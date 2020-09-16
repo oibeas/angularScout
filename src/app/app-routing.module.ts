@@ -33,7 +33,7 @@ const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
   onSameUrlNavigation: 'reload',
-  scrollOffset: [0, 100],
+  scrollOffset: [0, 80], //Este es el espacio del navbar para que el scroll no tape el titulo del componente listarutas o listaeventos
 };
 
 @NgModule({

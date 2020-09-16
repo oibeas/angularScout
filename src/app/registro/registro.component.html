@@ -1,0 +1,92 @@
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" novalidate>
+            <div class="modal-content">
+                <div class="modal-header text-center mb-0">
+                    <h4 class="modal-title w-100 font-weight-bold">REGISTRO</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body mx-3">
+                    <label class="ml-5 text-muted mb-0"><small>Usuario:</small></label>
+                    <div class="form-group d-flex mb-1">
+                        <img src="../../assets/register01.png">
+                        <input type="text" matInput placeholder="Introduce usuario" formControlName="usuario"
+                            class="form-control validate">
+                        <p class="error"
+                            *ngIf="formulario.controls.usuario.errors?.required && formulario.controls.usuario.touched">
+                            El campo
+                            usuario es requerido</p>
+                        <p class="error"
+                            *ngIf="formulario.controls.usuario.errors?.maxlength && formulario.controls.usuario.touched">
+                            El
+                            campo
+                            usuario debe ser menor de 45 caracteres</p>
+                    </div>
+                    <label class="ml-5 mb-0 text-muted"><small>Nombre y apellidos:</small></label>
+                    <div class="form-group d-flex mb-1">
+                        <img src="../../assets/register01.png">
+                        <input type="text" matInput placeholder="Introduce nombre" formControlName="nombre"
+                            class="form-control validate">
+                        <input type="text" matInput placeholder="Introduce apellidos" formControlName="apellidos"
+                            class="form-control validate ml-2">
+                    </div>
+                    <label class="ml-5 mb-0 text-muted"><small>Email:</small></label>
+                    <div class="form-group d-flex mb-1">
+                        <img src="../../assets/register02.png">
+                        <input type="email" matInput placeholder="Introduce email" formControlName="email"
+                            class="form-control validate">
+                    </div>
+
+
+                    <label class="ml-5 mb-0 text-muted"><small>Ciudad y sexo:</small></label>
+                    <div class="form-group d-flex mb-1">
+                        <img src="../../assets/register01.png">
+                        <input type="text" matInput placeholder="Introduce tu ciudad" formControlName="ciudad"
+                            class="form-control validate">
+
+                        <select class="form-control ml-2" formControlName="sexo">
+                            <option disabled selected>sexo</option>
+                            <option>M</option>
+                            <option>F</option>
+                        </select>
+                    </div>
+
+                    <label class="ml-5 mb-0 text-muted"><small>Fecha de nacimiento:</small></label>
+                    <div class="form-group d-flex mb-1">
+                        <img src="../../assets/register01.png">
+                        <input type="date" matInput placeholder="Introduce tu fecha de nacimiento dd/mm/yyyy"
+                            formControlName="fecha_nacimiento" class="form-control validate">
+                    </div>
+
+                    <label class="ml-5 mb-0 text-muted"><small>Contraseña:</small></label>
+                    <div class="form-group d-flex mb-1">
+                        <img src="../../assets/register03.png">
+                        <input type="password" matInput placeholder="Introduce contraseña" formControlName="password"
+                            class="form-control validate">
+                    </div>
+
+                    <label class="ml-5 mb-0 text-muted"><small>Repite contraseña:</small></label>
+                    <div class="form-group d-flex mb-1">
+                        <img src="../../assets/register03.png">
+                        <input type="password" matInput placeholder="Repite contraseña"
+                            formControlName="password_repeat" class="form-control validate">
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <input type="submit" value="Registrar" [disabled]="!formulario.valid"
+                        class="btn btn-block btn-success">
+                </div>
+            </div>
+        </form>
+        {{formulario.value|json}}
+    </div>
+</div>
+
+<div class="text-left">
+    <a href="" class="btn btn-outline-warning btn-lg" data-toggle="modal" data-target="#modalRegisterForm">Únete!!!</a>
+</div>

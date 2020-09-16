@@ -1,5 +1,29 @@
 <div class="container">
-    <h2 id="link-eventos">LISTA DE EVENTOS</h2>
+    <!-- <h2 id="link-eventos">LISTA DE EVENTOS</h2> -->
+
+    <!-- NAVBAR INICIO-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+        <a [routerLink]="['/eventos']" class="text-muted">
+            <h2>LISTA DE EVENTOS</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0"> -->
+            <input #buscar class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+            <!-- El decorador #buscar me sirve para pasar el campo input al ts -->
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="onSubmit()">Buscar</button>
+            <!-- <input [(ngModel)]="buscar" placeholder="Buscar" (keyup)="onSubmit($event)"> -->
+            <!-- </form> -->
+        </div>
+    </nav>
+    <!-- NAVBAR FIN -->
+
     <div class="row">
         <div class="col-lg-6 col-xl-4 col-md-6 mb-1 p-1" *ngFor="let evento of eventos">
             <a href="eventos/{{evento.id}}" class="text-muted">

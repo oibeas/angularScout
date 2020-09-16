@@ -3,13 +3,14 @@
     <table class="table">
         <tbody>
             <tr *ngFor="let evento of eventos; index as i">
-                <th scope="row">{{i+1}}</th>
-                <td class="font-weight-bolder">{{evento.nombre}}
-                    <p class="font-weight-lighter">{{evento.ciudad}}</p>
-                    <p class="font-weight-lighter">{{evento.fecha}}</p>
+                <a href="eventos/{{evento.id}}" class="text-muted">
+                    <th scope="row">{{i+1}}</th>
+                    <td class="font-weight-bolder">{{evento.nombre}}
+                        <p class="font-weight-lighter">{{evento.ciudad}}</p>
+                        <small class="font-weight-lighter">{{evento.fecha | date:'dd MMM, yyyy'}}</small>
 
-                </td>
-
+                    </td>
+                </a>
             </tr>
         </tbody>
 

@@ -1,5 +1,6 @@
 <div class="container">
     <h2>DETALLE DE EVENTO</h2>
+
     <div class="row">
         <div class="col-12 mb-1 p-1">
             <div class="card shadow bg-white rounded">
@@ -17,7 +18,7 @@
                             <strong>{{eventos.fecha | date:'dd MMM, yyyy'}}</strong></small>
                     </p>
                 </div>
-                <agm-map [mapTypeId]="'roadmap'" [zoom]="15" [latitude]="eventos.latitud" [longitude]="eventos.longitud"
+                <agm-map [mapTypeId]="'roadmap'" [zoom]="10" [latitude]="eventos.latitud" [longitude]="eventos.longitud"
                     class="col-10 p-2 center">
                     <agm-marker [latitude]="eventos.latitud" [longitude]="eventos.longitud">
                     </agm-marker>

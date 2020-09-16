@@ -17,4 +17,9 @@ export class ListaEventosService {
     return this.httpClient.get<Evento[]>(this.baseUrl).toPromise();
   }
 
+  getBusqueda(pBusqueda): Promise<Evento[]> {
+    // console.log(this.baseUrl + `/busqueda/${pBusqueda}`);
+    return this.httpClient.get<Evento[]>(this.baseUrl + `/busqueda/${pBusqueda}`).toPromise();
+  }
+
 }

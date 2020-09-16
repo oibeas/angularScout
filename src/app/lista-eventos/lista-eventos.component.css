@@ -8,3 +8,7 @@
 .card {
     min-height: 350px;
 }
+
+.form-control {
+    width: 200px;
+}

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContenedorComponent } from './contenedor/contenedor.component';
 import { InfoSeccionesComponent } from './info-secciones/info-secciones.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { InfoSeccionesComponent } from './info-secciones/info-secciones.componen
     FooterComponent,
     HomeComponent,
     ContenedorComponent,
-    InfoSeccionesComponent
+    InfoSeccionesComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,9 @@ import { InfoSeccionesComponent } from './info-secciones/info-secciones.componen
       apiKey: 'AIzaSyAOm-KmhlnD0YZjTqaHnRkPoSvA3ieyzRc'
     }),
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

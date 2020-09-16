@@ -51,7 +51,6 @@
     transition: 0.5s;
 }
 
-
 .card-img-overlay {
     display: flex;
     align-items: center;
@@ -64,3 +63,12 @@
     font-weight: 700;
 }
 
+.espacio {
+    height: 40vh;
+    background-image: url(../../assets/imghero15.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: rgb(185, 179, 179);
+    background-blend-mode: multiply;
+}
