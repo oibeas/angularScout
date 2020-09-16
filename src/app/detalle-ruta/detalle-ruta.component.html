@@ -1,5 +1,5 @@
 <div class="navbar">
-    <a class="ml-4" [routerLink]="['/home']"><img src="../../assets/LogoBota100.png" alt=""></a>
+    <a class="ml-4" [routerLink]="['/home']"><img src="../../assets/LogoBota100sinfondo.png" alt=""></a>
     <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Busca rutas" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
@@ -33,7 +33,15 @@
                 <div class="row">
                     <div class="col-9">
                         <div>
-                            <agm-map></agm-map>
+                            <agm-map [mapTypeId]="mapTypeId" [fitBounds]="true">
+                                <!-- <agm-marker *ngFor="let coordenadas of arrCoordenadas"
+                                    [latitude]="coordenadas.split(',')[1]" [longitude]="coordenadas.split(',')[0]"
+                                    [agmFitBounds] [iconUrl]="{url: ''}">
+                                </agm-marker> -->
+                                <agm-kml-layer [url]="'https://ec87cfddf67c.ngrok.io/api/rutas/kml/' + ruta?.id"
+                                    [clickable]="true">
+                                </agm-kml-layer>
+                            </agm-map>
                         </div>
                     </div>
                     <div class="col-3">
@@ -105,7 +113,7 @@
             </div>
             <div class="col-3 fotos">
                 <div class="row">
-                    <div class="col-4 mb-2" *ngFor="let imagen of ruta?.imagenes.split(',')">
+                    <div class="col-12 mb-2 mt-5" *ngFor="let imagen of ruta?.imagenes.split(',')">
                         <img [src]="sanitizeImageUrl(imagen)" alt="">
                     </div>
                 </div>

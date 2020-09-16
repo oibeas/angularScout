@@ -12,12 +12,16 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 export class DetalleRutaComponent implements OnInit {
 
   ruta: Ruta;
+  arrCoordenadas: string[];
+  mapTypeId: string;
 
   constructor(
     private listaRutasService: ListaRutasService,
     private activatedRoute: ActivatedRoute,
     private sanitizer: DomSanitizer
-  ) { }
+  ) {
+    this.mapTypeId = 'hybrid'
+  }
 
   sanitizeImageUrl(imageUrl: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
@@ -26,6 +30,9 @@ export class DetalleRutaComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(async params => {
       this.ruta = await this.listaRutasService.getById(params.rutaId)
+      // console.log(this.ruta)
+      this.arrCoordenadas = this.ruta.puntos_ruta.split(' ')
+      // console.log(this.arrCoordenadas);
     });
   }
 }

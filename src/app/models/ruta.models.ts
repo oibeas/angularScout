@@ -4,13 +4,13 @@ export class Ruta {
     localizacion: string;
     longitud: number;
     latitud: number;
-    puntosRuta: string;
+    puntos_ruta: string;
     distancia: number;
     circular: boolean;
     altitud_max: number;
     altitud_min: number;
     dificultad: string;
-    fechaCreacion: Date;
+    fecha_creacion: Date;
     imagenes: string;
     arrImagenes: any[]; //Esto mete los enlaces de imagenes separadas por comas en un array
     descripcion: string;

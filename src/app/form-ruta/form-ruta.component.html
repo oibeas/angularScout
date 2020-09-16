@@ -1,1 +1,124 @@
-<p>form-ruta works!</p>
+<!-- nombre, localizacion, distancia, circular, dificultad, imagenes, descripcion, duracion, puntuacion. -->
+
+<div class="container-fluid">
+    <div class="container">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Nombre de la ruta</label>
+                        <input type="text" class="form-control" formControlName="nombre">
+                        <p class="error"
+                            *ngIf="formulario.controls.nombre.errors?.required && formulario.controls.nombre.touched">
+                            El campo nombre es obligatorio</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Localización (Ciudad, parque natural, sierra, río cercano)</label>
+                        <input type="text" class="form-control" formControlName="localizacion">
+                        <p class="error"
+                            *ngIf="formulario.controls.localizacion.errors?.required && formulario.controls.localizacion.touched">
+                            El campo localización es obligatorio</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label>Distancia en KM</label>
+                        <input type="text" class="form-control" formControlName="distancia">
+                        <p class="error"
+                            *ngIf="formulario.controls.distancia.errors?.required && formulario.controls.distancia.touched">
+                            El campo distancia es obligatorio</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div>
+                        <p>Tipo de recorrido:</p>
+                    </div>
+                    <div class="form-check mr-2">
+                        <input class="form-check-input" type="radio" name="exampleRadios" value="1" checked
+                            formControlName="1">
+                        <label class="form-check-label" for="exampleRadios1">
+                            Circular
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" value="0" formControlName="0">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Lineal
+                        </label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label>Dificultad</label>
+                        <select class="form-control" formControlName="dificultad">
+                            <option value="Facil">Fácil
+                            </option>
+                            <option value="Moderado">Moderado
+                            </option>
+                            <option value="Dificil">Difícil
+                            </option>
+                            <option value="Muy dificil">Muy Difícil
+                            </option>
+                            <option value="Experto">Experto
+                            </option>
+                        </select>
+                        <p class="error"
+                            *ngIf="formulario.controls.dificultad.errors?.required && formulario.controls.dificultad.touched">
+                            El campo dificultad es obligatorio</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label>¿Quiéres subir alguna foto? Añade una url</label>
+                        <input type="text" class="form-control" formControlName="imagenes">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <textarea class="form-control" name="Descripción" cols="120" rows="5"
+                            formControlName="descripcion"></textarea>
+                        <p class="error"
+                            *ngIf="formulario.controls.descripcion.errors?.required && formulario.controls.descripcion.touched">
+                            El campo descripción es obligatorio</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Duración</label>
+                        <input type="text" class="form-control" formControlName="duracion">
+                        <p class="error"
+                            *ngIf="formulario.controls.duracion.errors?.required && formulario.controls.duracion.touched">
+                            El campo duración es obligatorio</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>¿Cuántas estrellas le das?</label>
+                        <select class="form-control" formControlName="puntuacion">
+                            <option value="1">1
+                            </option>
+                            <option value="2">2
+                            </option>
+                            <option value="3">3
+                            </option>
+                            <option value="4">4
+                            </option>
+                            <option value="5">5
+                            </option>
+                        </select>
+                        <p class="error"
+                            *ngIf="formulario.controls.puntuacion.errors?.required && formulario.controls.puntuacion.touched">
+                            El campo puntuación es obligatorio</p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-dark btn-block">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- {{ formulario.value | json }} -->
