@@ -58,7 +58,7 @@ agm-map {
 }
 
 .container-fluid .container .row .addScroll ul li:hover {
-    background-color: honeydew;
+    background-color: lavender;
 }
 
 .container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-header, .modal-body, .modal-footer  {

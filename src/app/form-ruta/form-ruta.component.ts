@@ -1,5 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ListaRutasService } from '../lista-rutas.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class FormRutaComponent implements OnInit {
   //CAMPOS QUE PERTENECEN AL FORMULARIO: nombre, localizacion, distancia, circular, dificultad, imagenes, descripcion, duracion, puntuacion.
   constructor(
     private listaRutasService: ListaRutasService,
-    private zone: NgZone
+    private zone: NgZone,
+    private router: Router
   ) {
     this.formulario = new FormGroup({
       nombre: new FormControl('', [Validators.required]),
@@ -73,7 +75,9 @@ export class FormRutaComponent implements OnInit {
     body.puntos_ruta = coordenadas
 
     const response = await this.listaRutasService.postForm(body);
-    console.log(response);
+    console.log(response['ruta'].id);
+    // const { ruta: { id } } = response
+    this.router.navigate(['/rutas', response['ruta'].id])
   }
 
 }

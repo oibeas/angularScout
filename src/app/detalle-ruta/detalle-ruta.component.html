@@ -35,11 +35,15 @@
                     <div class="col-9">
                         <div>
                             <agm-map *ngIf="ruta" [mapTypeId]="mapTypeId" [fitBounds]="true">
-                                <!-- <agm-marker *ngFor="let coordenadas of arrCoordenadas"
-                                    [latitude]="coordenadas.split(',')[1]" [longitude]="coordenadas.split(',')[0]"
-                                    [agmFitBounds] [iconUrl]="{url: ''}">
-                                </agm-marker> -->
-                                <agm-kml-layer [url]="'https://06d5e9227c38.ngrok.io/api/rutas/kml/' + ruta?.id"
+                                <agm-marker [latitude]="this.firstMarker.split(',')[1]"
+                                    [longitude]="this.firstMarker.split(',')[0]" [agmFitBounds]
+                                    [iconUrl]="{url: '../assets/inicio-ruta32.png'}">
+                                </agm-marker>
+                                <agm-marker [latitude]="this.lastMarker.split(',')[1]"
+                                    [longitude]="this.lastMarker.split(',')[0]" [agmFitBounds]
+                                    [iconUrl]="{url: '../assets/fin-ruta7.png'}">
+                                </agm-marker>
+                                <agm-kml-layer [url]="'https://45c817859d43.ngrok.io/api/rutas/kml/' + ruta?.id"
                                     [clickable]="true">
                                 </agm-kml-layer>
                             </agm-map>
@@ -91,9 +95,17 @@
                                             <p><strong>Altitud máx.: </strong>{{ruta?.altitud_max}} m</p>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <div>
                                             <p><strong>Dificultad: </strong>{{ruta?.dificultad}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div>
+                                            <div class="card-text circular" [ngSwitch]="ruta.circular">
+                                                <img src="assets/circularNo.png" *ngSwitchCase="0">
+                                                <img src="assets/circularSi.png" *ngSwitchCase="1">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

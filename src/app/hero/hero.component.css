@@ -53,6 +53,10 @@
   width: 100%;
 }
 
+.navbar .text-left a:hover {
+  color: white;
+}
+
 .sticky {
   background-color: #1a1a2e;
   position: fixed;

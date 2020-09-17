@@ -4,6 +4,16 @@ agm-map {
     height: 70vh;
 }
 
+.container-fluid{
+    background-color: beige;
+}
+
+.container {
+    border: 4px solid white;
+    border-radius: 10px;
+    background-color: lavender;
+}
+
 div .form-check {
     display: inline-block;
 }

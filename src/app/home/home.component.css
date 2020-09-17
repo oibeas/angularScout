@@ -46,6 +46,11 @@
     transition: 0.5s;
 }
 
+.card img {
+    height: 300px;
+    object-fit: cover;
+}
+
 .card:hover img {
     transform: scale(1.1);
     transition: 0.5s;
@@ -54,6 +59,7 @@
 .card-img-overlay {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .card-img-overlay h3 {

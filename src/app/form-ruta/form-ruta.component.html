@@ -1,9 +1,11 @@
 <!-- nombre, localizacion, distancia, circular, dificultad, imagenes, descripcion, duracion, puntuacion. -->
-
-<div class="container-fluid">
+<div class="container-fluid py-5">
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <h3>Cuéntanos tu última ruta</h3>
+            </div>
+            <div class="col-12 my-5">
                 <div>
                     <agm-map [zoom]="zoom" [latitude]="lat" [longitude]="lng" [mapTypeId]="mapTypeId"
                         (mapReady)="mapReadyHandler($event)">
@@ -86,16 +88,6 @@
                         <input type="text" class="form-control" formControlName="imagenes">
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>Descripción</label>
-                        <textarea class="form-control" name="Descripción" cols="120" rows="5"
-                            formControlName="descripcion"></textarea>
-                        <p class="error"
-                            *ngIf="formulario.controls.descripcion.errors?.required && formulario.controls.descripcion.touched">
-                            El campo descripción es obligatorio</p>
-                    </div>
-                </div>
                 <div class="col-6">
                     <div class="form-group">
                         <label>Duración</label>
@@ -126,8 +118,17 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <a [routerLink]="['rutas/']"><input type="submit" value="Enviar" [disabled]="!formulario.valid"
-                            class="btn btn-dark btn-block"></a>
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <textarea class="form-control" name="Descripción" cols="120" rows="5"
+                            formControlName="descripcion"></textarea>
+                        <p class="error"
+                            *ngIf="formulario.controls.descripcion.errors?.required && formulario.controls.descripcion.touched">
+                            El campo descripción es obligatorio</p>
+                    </div>
+                </div>
+                <div class="col-12 mt-3 mb-5">
+                    <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-dark btn-block">
                 </div>
             </div>
         </form>
