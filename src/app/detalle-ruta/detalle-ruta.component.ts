@@ -30,9 +30,9 @@ export class DetalleRutaComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(async params => {
       this.ruta = await this.listaRutasService.getById(params.rutaId)
-      // console.log(this.ruta)
+      console.log(this.ruta)
       this.arrCoordenadas = this.ruta.puntos_ruta.split(' ')
-      // console.log(this.arrCoordenadas);
+      console.log(this.arrCoordenadas);
     });
   }
 }

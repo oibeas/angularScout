@@ -2,6 +2,18 @@
 
 <div class="container-fluid">
     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <agm-map [zoom]="zoom" [latitude]="lat" [longitude]="lng" [mapTypeId]="mapTypeId"
+                        (mapReady)="mapReadyHandler($event)">
+                        <agm-marker *ngFor="let coordenadas of arrCoordenadas" [latitude]="coordenadas.lat"
+                            [longitude]="coordenadas.lng" [agmFitBounds] [iconUrl]="{url: '../assets/bandera.png'}">
+                        </agm-marker>
+                    </agm-map>
+                </div>
+            </div>
+        </div>
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-6">
@@ -36,14 +48,13 @@
                         <p>Tipo de recorrido:</p>
                     </div>
                     <div class="form-check mr-2">
-                        <input class="form-check-input" type="radio" name="exampleRadios" value="1" checked
-                            formControlName="1">
+                        <input class="form-check-input" type="radio" value="1" checked formControlName="circular">
                         <label class="form-check-label" for="exampleRadios1">
                             Circular
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" value="0" formControlName="0">
+                        <input class="form-check-input" type="radio" value="0" formControlName="circular">
                         <label class="form-check-label" for="exampleRadios2">
                             Lineal
                         </label>
@@ -115,7 +126,8 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-dark btn-block">
+                    <a [routerLink]="['rutas/']"><input type="submit" value="Enviar" [disabled]="!formulario.valid"
+                            class="btn btn-dark btn-block"></a>
                 </div>
             </div>
         </form>
