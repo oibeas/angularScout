@@ -17,7 +17,8 @@ export class FormRutaComponent implements OnInit {
   zoom: number;
   mapClickListener: any;
   arrCoordenadas: any[];
-  arrSimple: any[];
+  firstMarker: any;
+  lastMarker: any;
 
   //CAMPOS QUE PERTENECEN AL FORMULARIO: nombre, localizacion, distancia, circular, dificultad, imagenes, descripcion, duracion, puntuacion.
   constructor(
@@ -42,7 +43,9 @@ export class FormRutaComponent implements OnInit {
     this.lng = -3.703339;
     this.zoom = 9;
     this.arrCoordenadas = [];
-    this.arrSimple = [];
+    this.firstMarker = "";
+    this.lastMarker = ""
+
   }
 
   ngOnInit(): void {
@@ -53,7 +56,10 @@ export class FormRutaComponent implements OnInit {
       this.zone.run(() => {
         console.log(e, e.latLng.lat(), e.latLng.lng());
         this.arrCoordenadas.push({ lat: e.latLng.lat(), lng: e.latLng.lng() });
-        // console.log(this.arrCoordenadas);
+        console.log(this.arrCoordenadas, 'coordenadas');
+
+        this.firstMarker = this.arrCoordenadas[0];
+        this.lastMarker = this.arrCoordenadas[this.arrCoordenadas.length - 1];
       });
     });
   }

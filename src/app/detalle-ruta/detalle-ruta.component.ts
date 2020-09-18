@@ -34,25 +34,12 @@ export class DetalleRutaComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(async params => {
       this.ruta = await this.listaRutasService.getById(params.rutaId)
-      // console.log(this.ruta)
+      console.log(this.ruta.puntos_ruta, 'puntos ruta')
       this.arrCoordenadas = this.ruta.puntos_ruta.split(' ')
       console.log(this.arrCoordenadas);
       this.firstMarker = this.arrCoordenadas[0];
       this.lastMarker = this.arrCoordenadas[this.arrCoordenadas.length - 2];
-      console.log(this.arrCoordenadas[0].split(',')[0], 'lng primer marker');
-      console.log(this.arrCoordenadas[0].split(',')[1], 'lat primer marker');
-      const ultima = this.arrCoordenadas[this.arrCoordenadas.length - 2].split(',')[0];
-      console.log(ultima, 'lng último marker');
-      this.arrCoordenadas[this.arrCoordenadas.length - 2].split(',')[1]
 
     });
   }
 }
-
-//SIMILAR PARA GUARDAR LAS imagenes DE LA RUTA EN UN ARRAY Y LOS puntos_ruta EN OTRO.
-// .then(response => {
-//   this.rutas = response;
-//   for (let ruta of response) {
-//     const arrImagenes = ruta.imagenes.split(',');
-//     ruta.arrImagenes = arrImagenes
-//   
