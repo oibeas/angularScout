@@ -1,20 +1,4 @@
-<div class="navbar">
-    <a class="ml-4" [routerLink]="['/home']"><img src="../../assets/LogoBota100sinfondo.png" alt=""></a>
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Busca rutas" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
-
-    <div>
-        <button type="button" class="btn btn-info btn-block">Sube tu ruta</button>
-    </div>
-    <div>
-        <a href="#">Inicia sesión</a>
-    </div>
-    <div class="pr-2">
-        <button type="button" class="btn btn-success btn-block">Regístrate</button>
-    </div>
-</div>
+<app-navbar></app-navbar>
 <div class="container-fluid">
     <div class="container">
         <div class="row pt-5 mb-4">
@@ -38,7 +22,7 @@
                                     [latitude]="coordenadas.split(',')[1]" [longitude]="coordenadas.split(',')[0]"
                                     [agmFitBounds] [iconUrl]="{url: ''}">
                                 </agm-marker> -->
-                                <agm-kml-layer [url]="'https://ec87cfddf67c.ngrok.io/api/rutas/kml/' + ruta?.id"
+                                <agm-kml-layer [url]="'https://044d2d97c3c9.ngrok.io/api/rutas/kml/' + ruta?.id"
                                     [clickable]="true">
                                 </agm-kml-layer>
                             </agm-map>

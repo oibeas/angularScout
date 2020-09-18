@@ -2,3 +2,7 @@ agm-map {
     width: 80%;
     height: 40vh;
 }
+
+.container {
+    padding-top: 70px;
+}

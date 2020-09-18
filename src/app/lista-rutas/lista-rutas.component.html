@@ -1,5 +1,36 @@
 <div class="container">
-    <h2 id="link-rutas">LISTA DE RUTAS</h2>
+    <!-- <h2 id="link-rutas">LISTA DE RUTAS</h2> -->
+
+    <!-- NAVBAR INICIO-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+        <a [routerLink]="['/rutas']" class="text-muted">
+            <h2>LISTA DE RUTAS</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0"> -->
+            <input #buscar class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+            <!-- El decorador #buscar me sirve para pasar el campo input al ts -->
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="onSubmit()">Buscar</button>
+            <!-- <input [(ngModel)]="buscar" placeholder="Buscar" (keyup)="onSubmit($event)"> -->
+            <!-- </form> -->
+        </div>
+    </nav>
+    <!-- NAVBAR FIN -->
+
+
+
+
+
+
+
+
     <div class="addScroll">
         <div class="card mb-3 shadow bg-white rounded" *ngFor="let ruta of rutas">
             <a href="/rutas/{{ruta.id}}" class="text-muted">

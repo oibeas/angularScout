@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { RegistroService } from '../registro.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,7 +8,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  constructor() { }
+  constructor(public registroService: RegistroService) { }
 
   ngOnInit(): void {
   }

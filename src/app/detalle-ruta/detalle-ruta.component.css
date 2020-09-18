@@ -7,26 +7,6 @@ agm-map {
     background-color: lavender;
 }
 
-.navbar {
-    background-color: #1a1a2e;
-    position: fixed;
-    /* top: 0; */
-    width: 100%;
-    z-index: 100;
-}
-
-.navbar img {
-    width: 70%;
-}
-
-.navbar a {
-    width: 8%;
-}
-
-.navbar a:hover {
-    color: #33A485;
-}
-
 .container {
     padding-top: 80px;
 }

@@ -27,4 +27,9 @@ export class ListaRutasService {
     return this.httpClient.post<FormGroup>(`${this.baseUrl}/new`, pFormValue).toPromise();
   }
 
+  getBusqueda(pBusqueda): Promise<Ruta[]> {
+    // console.log(this.baseUrl + `/busqueda/${pBusqueda}`);
+    return this.httpClient.get<Ruta[]>(this.baseUrl + `/busqueda/${pBusqueda}`).toPromise();
+  }
+
 }

@@ -25,6 +25,7 @@ import { ContenedorComponent } from './contenedor/contenedor.component';
 import { InfoSeccionesComponent } from './info-secciones/info-secciones.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -48,7 +49,7 @@ import { LoginComponent } from './login/login.component';
     ContenedorComponent,
     InfoSeccionesComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,8 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

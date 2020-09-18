@@ -1,4 +1,7 @@
 <div class="jumbotron">
+    <div class="active item one"></div>
+    <div class="item two"></div>
+    <div class="item three"></div>
     <div class="empty"></div>
     <nav class="navbar smooth-scroll" (scroll)="onWindowScroll($event)">
         <a routerLink="/home">
@@ -51,8 +54,17 @@
         </div>
         <div class="pr-2">
             <div class="text-left">
-                <a href="" class="btn btn-outline-success p-2" data-toggle="modal" data-target="#modalLoginForm">Inicio
-                    sesión</a>
+                <div *ngIf="!registroService.logueado()">
+                    <a href="" class="btn btn-outline-success p-2" data-toggle="modal"
+                        data-target="#modalLoginForm">Inicio
+                        sesión</a>
+                </div>
+                <div *ngIf="registroService.logueado()">
+                    <div class="btn btn-light font-weight-bolder" data-toggle="modal" data-target="#modalUsuarioForm">
+                        {{registroService.logueado()}}
+                        <img src="../../assets/avatar03.png" class="pl-1 avatar">
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -127,6 +139,7 @@
         </div>
     </div>
 </div>
+
 
 
 <app-login></app-login>

@@ -14,7 +14,6 @@ export class RegistroComponent implements OnInit {
   formularioCreado: boolean;
 
   constructor(private registroService: RegistroService) {
-    this.formularioCreado = false;
 
     this.formulario = new FormGroup({
       usuario: new FormControl('', [
@@ -42,7 +41,7 @@ export class RegistroComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const controlNombre = this.formulario.controls.name;
+    const controlNombre = this.formulario.controls.nombre;
     controlNombre.valueChanges.pipe(debounceTime(700)).subscribe(value => {
       console.log(value);
     });
@@ -55,7 +54,7 @@ export class RegistroComponent implements OnInit {
     if (response.sucess) {
       console.log('ok');
       this.formulario.reset();
-      this.formularioCreado = true;
+      document.getElementById("closeRegistroButton").click();
     } else {
       return { error: 'Fallo al crear usuario' };
     }

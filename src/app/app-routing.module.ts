@@ -11,17 +11,18 @@ import { FormEventoComponent } from './form-evento/form-evento.component';
 import { HomeComponent } from './home/home.component';
 import { MapaGruposComponent } from './mapa-grupos/mapa-grupos.component';
 import { InfoSeccionesComponent } from './info-secciones/info-secciones.component';
+import { LoginGuard } from './login.guard';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
   { path: 'rutas', component: ListaRutasComponent },
-  { path: 'rutas/new', component: FormRutaComponent },
-  { path: 'rutas/:rutaId', component: DetalleRutaComponent },
+  { path: 'rutas/new', component: FormRutaComponent, canActivate: [LoginGuard] },
+  { path: 'rutas/:rutaId', component: DetalleRutaComponent, canActivate: [LoginGuard] },
   { path: 'eventos', component: ListaEventosComponent },
-  { path: 'eventos/new', component: FormEventoComponent },
-  { path: 'eventos/:eventoId', component: DetalleEventoComponent },
+  { path: 'eventos/new', component: FormEventoComponent, canActivate: [LoginGuard] },
+  { path: 'eventos/:eventoId', component: DetalleEventoComponent, canActivate: [LoginGuard] },
   { path: 'grupos', component: MapaGruposComponent },
   // { path: 'grupos/:grupoId', component: ListaRutasComponent },
   { path: 'info', component: InfoMovimientoComponent },
