@@ -1,7 +1,21 @@
 <!-- nombre, localizacion, distancia, circular, dificultad, imagenes, descripcion, duracion, puntuacion. -->
-
-<div class="container-fluid">
+<div class="container-fluid py-5">
     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Cuéntanos tu última ruta</h3>
+            </div>
+            <div class="col-12 my-5">
+                <div>
+                    <agm-map [zoom]="zoom" [latitude]="lat" [longitude]="lng" [mapTypeId]="mapTypeId"
+                        (mapReady)="mapReadyHandler($event)">
+                        <agm-marker *ngFor="let coordenadas of arrCoordenadas" [latitude]="coordenadas.lat"
+                            [longitude]="coordenadas.lng" [agmFitBounds] [iconUrl]="{url: '../assets/bandera.png'}">
+                        </agm-marker>
+                    </agm-map>
+                </div>
+            </div>
+        </div>
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-6">
@@ -36,14 +50,13 @@
                         <p>Tipo de recorrido:</p>
                     </div>
                     <div class="form-check mr-2">
-                        <input class="form-check-input" type="radio" name="exampleRadios" value="1" checked
-                            formControlName="1">
+                        <input class="form-check-input" type="radio" value="1" checked formControlName="circular">
                         <label class="form-check-label" for="exampleRadios1">
                             Circular
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" value="0" formControlName="0">
+                        <input class="form-check-input" type="radio" value="0" formControlName="circular">
                         <label class="form-check-label" for="exampleRadios2">
                             Lineal
                         </label>
@@ -73,16 +86,6 @@
                     <div class="form-group">
                         <label>¿Quiéres subir alguna foto? Añade una url</label>
                         <input type="text" class="form-control" formControlName="imagenes">
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>Descripción</label>
-                        <textarea class="form-control" name="Descripción" cols="120" rows="5"
-                            formControlName="descripcion"></textarea>
-                        <p class="error"
-                            *ngIf="formulario.controls.descripcion.errors?.required && formulario.controls.descripcion.touched">
-                            El campo descripción es obligatorio</p>
                     </div>
                 </div>
                 <div class="col-6">
@@ -115,6 +118,16 @@
                     </div>
                 </div>
                 <div class="col-12">
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <textarea class="form-control" name="Descripción" cols="120" rows="5"
+                            formControlName="descripcion"></textarea>
+                        <p class="error"
+                            *ngIf="formulario.controls.descripcion.errors?.required && formulario.controls.descripcion.touched">
+                            El campo descripción es obligatorio</p>
+                    </div>
+                </div>
+                <div class="col-12 mt-3 mb-5">
                     <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-dark btn-block">
                 </div>
             </div>

@@ -1,107 +1,141 @@
-<app-navbar></app-navbar>
-<div class="container-fluid">
-    <div class="container">
-        <div class="row pt-5 mb-4">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-8">
-                        <div>
-                            <h3>{{ruta?.nombre}}</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<<<<<<< HEAD <app-navbar>
+    </app-navbar>
+    =======
+    <div class="navbar">
+        <a class="ml-4" [routerLink]="['/home']"><img src="../../assets/LogoBota100sinfondo.png" alt=""></a>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Busca rutas" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+
+        <div>
+            <a [routerLink]="['../../rutas/new']"><button type=" button" class="btn btn-info btn-block">Sube tu
+                    ruta</button></a>
         </div>
-        <div class="row mb-5">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-9">
-                        <div>
-                            <agm-map [mapTypeId]="mapTypeId" [fitBounds]="true">
-                                <!-- <agm-marker *ngFor="let coordenadas of arrCoordenadas"
-                                    [latitude]="coordenadas.split(',')[1]" [longitude]="coordenadas.split(',')[0]"
-                                    [agmFitBounds] [iconUrl]="{url: ''}">
-                                </agm-marker> -->
-                                <agm-kml-layer [url]="'https://044d2d97c3c9.ngrok.io/api/rutas/kml/' + ruta?.id"
-                                    [clickable]="true">
-                                </agm-kml-layer>
-                            </agm-map>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="row">
-                            <div class="col-12 mb-3 info-usuario">
-                                <div>
-                                    <h5>{{ruta?.usuario}}</h5>
-                                </div>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <div>
-                                    <button type="button" class="btn btn-success btn-block">Valora esta ruta</button>
-                                </div>
-                            </div>
-                            <div class="col-12 info datos">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="d-flex bd-highlight mb-3">
-                                            <p class="card-text my-0 mx-auto p-2 bd-highlight"
-                                                [ngSwitch]="ruta?.puntuacion">
-                                                <img src="assets/cinco.png" *ngSwitchCase="5">
-                                                <img src="assets/cuatro.png" *ngSwitchCase="4">
-                                                <img src="assets/tres.png" *ngSwitchCase="3">
-                                                <img src="assets/dos.png" *ngSwitchCase="2">
-                                                <img src="assets/uno.png" *ngSwitchCase="1">
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div>
-                                            <p><strong>Distancia: </strong>{{ruta?.distancia}} Km</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div>
-                                            <p><strong>Duración: </strong>{{ruta?.duracion}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div>
-                                            <p><strong>Altitud min.: </strong>{{ruta?.altitud_min}} m</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div>
-                                            <p><strong>Altitud máx.: </strong>{{ruta?.altitud_max}} m</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div>
-                                            <p><strong>Dificultad: </strong>{{ruta?.dificultad}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <a href="#">Inicia sesión</a>
         </div>
-        <div class="row pb-5">
-            <div class="col-9">
-                <div class="mb-4">
-                    <h4>DESCRIPCIÓN DE LA RUTA:</h4>
-                </div>
-                <div class="info p-3">
-                    <p>{{ruta?.descripcion}}</p>
+        <div class="pr-2">
+            <button type="button" class="btn btn-success btn-block">Regístrate</button>
+        </div>
+    </div>
+    >>>>>>> featured_formularioMAPA
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row pt-5 mb-4">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-8">
+                            <div>
+                                <h3>{{ruta?.nombre}}</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-3 fotos">
-                <div class="row">
-                    <div class="col-12 mb-2 mt-5" *ngFor="let imagen of ruta?.imagenes.split(',')">
-                        <img [src]="sanitizeImageUrl(imagen)" alt="">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-9">
+                            <div>
+                                <agm-map *ngIf="ruta" [mapTypeId]="mapTypeId" [fitBounds]="true">
+                                    <agm-marker [latitude]="this.firstMarker.split(',')[1]"
+                                        [longitude]="this.firstMarker.split(',')[0]" [agmFitBounds]
+                                        [iconUrl]="{url: '../assets/inicio-ruta32.png'}">
+                                    </agm-marker>
+                                    <agm-marker [latitude]="this.lastMarker.split(',')[1]"
+                                        [longitude]="this.lastMarker.split(',')[0]" [agmFitBounds]
+                                        [iconUrl]="{url: '../assets/fin-ruta7.png'}">
+                                    </agm-marker>
+                                    <agm-kml-layer [url]="'https://f76071207baf.ngrok.io/api/rutas/kml/' + ruta?.id"
+                                        [clickable]="true">
+                                    </agm-kml-layer>
+                                </agm-map>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="row">
+                                <div class="col-12 mb-3 info-usuario">
+                                    <div>
+                                        <h5>{{ruta?.usuario}}</h5>
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <div>
+                                        <button type="button" class="btn btn-success btn-block">Valora esta
+                                            ruta</button>
+                                    </div>
+                                </div>
+                                <div class="col-12 info datos">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="d-flex bd-highlight mb-3">
+                                                <p class="card-text my-0 mx-auto p-2 bd-highlight"
+                                                    [ngSwitch]="ruta?.puntuacion">
+                                                    <img src="assets/cinco.png" *ngSwitchCase="5">
+                                                    <img src="assets/cuatro.png" *ngSwitchCase="4">
+                                                    <img src="assets/tres.png" *ngSwitchCase="3">
+                                                    <img src="assets/dos.png" *ngSwitchCase="2">
+                                                    <img src="assets/uno.png" *ngSwitchCase="1">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <p><strong>Distancia: </strong>{{ruta?.distancia}} Km</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <p><strong>Duración: </strong>{{ruta?.duracion}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <p><strong>Altitud min.: </strong>{{ruta?.altitud_min}} m</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <p><strong>Altitud máx.: </strong>{{ruta?.altitud_max}} m</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <p><strong>Dificultad: </strong>{{ruta?.dificultad}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <div class="card-text circular" [ngSwitch]="ruta.circular">
+                                                    <img src="assets/circularNo.png" *ngSwitchCase="0">
+                                                    <img src="assets/circularSi.png" *ngSwitchCase="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pb-5">
+                <div class="col-9">
+                    <div class="mb-4">
+                        <h4>DESCRIPCIÓN DE LA RUTA:</h4>
+                    </div>
+                    <div class="info p-3">
+                        <p>{{ruta?.descripcion}}</p>
+                    </div>
+                </div>
+                <div class="col-3 fotos">
+                    <div class="row">
+                        <div class="col-12 mb-2 mt-5" *ngFor="let imagen of ruta?.imagenes.split(',')">
+                            <img [src]="sanitizeImageUrl(imagen)" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

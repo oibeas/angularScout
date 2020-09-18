@@ -12,6 +12,8 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 export class DetalleRutaComponent implements OnInit {
 
   ruta: Ruta;
+  firstMarker: string;
+  lastMarker: string;
   arrCoordenadas: string[];
   mapTypeId: string;
 
@@ -20,7 +22,9 @@ export class DetalleRutaComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private sanitizer: DomSanitizer
   ) {
-    this.mapTypeId = 'hybrid'
+    this.mapTypeId = 'hybrid';
+    this.firstMarker = "";
+    this.lastMarker = "";
   }
 
   sanitizeImageUrl(imageUrl: string): SafeUrl {
@@ -32,7 +36,15 @@ export class DetalleRutaComponent implements OnInit {
       this.ruta = await this.listaRutasService.getById(params.rutaId)
       // console.log(this.ruta)
       this.arrCoordenadas = this.ruta.puntos_ruta.split(' ')
-      // console.log(this.arrCoordenadas);
+      console.log(this.arrCoordenadas);
+      this.firstMarker = this.arrCoordenadas[0];
+      this.lastMarker = this.arrCoordenadas[this.arrCoordenadas.length - 2];
+      console.log(this.arrCoordenadas[0].split(',')[0], 'lng primer marker');
+      console.log(this.arrCoordenadas[0].split(',')[1], 'lat primer marker');
+      const ultima = this.arrCoordenadas[this.arrCoordenadas.length - 2].split(',')[0];
+      console.log(ultima, 'lng último marker');
+      this.arrCoordenadas[this.arrCoordenadas.length - 2].split(',')[1]
+
     });
   }
 }
