@@ -11,7 +11,7 @@
         </thead> -->
         <tbody>
             <tr *ngFor="let ruta of rutas; index as i">
-                <a href="/rutas/{{ruta.id}}" class="text-muted">
+                <a [routerLink]="['/rutas/'+ruta.id]" class="text-muted">
                     <th scope="row">{{i+1}}</th>
                     <td class="font-weight-lighter">{{ruta.nombre}}
                         <p class="font-weight-bolder">{{ruta.localizacion}}</p>

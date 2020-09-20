@@ -2,6 +2,9 @@ import { Component, ElementRef, ViewChild, OnInit, HostListener } from '@angular
 import { RegistroService } from '../registro.service';
 import { Ruta } from '../models/ruta.models';
 import { ListaRutasService } from '../lista-rutas.service';
+import { ParamMap, Router, ActivatedRoute } from "@angular/router";
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -16,10 +19,15 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     public registroService: RegistroService, //Este inyectable es para el el login
-    private listaRutasService: ListaRutasService //Este inyectable es para ña busqueda
+    private listaRutasService: ListaRutasService, //Este inyectable es para ña busqueda
+    private router: ActivatedRoute //Para subscribirme a la url
   ) { }
 
   ngOnInit(): void {
+
+
+
+
   }
 
 

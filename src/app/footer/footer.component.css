@@ -107,3 +107,10 @@ ul.social-network li {
 .social-network a {
     background-color: #F9F9F9;
 }
+
+.footer-middle {
+    background-image: url(../../assets/footer.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 300px;
+}

@@ -9,14 +9,52 @@
         </div>
     </a>
     <form class="form-inline my-2 my-lg-0">
-        <input #buscar class="form-control mr-sm-2" type="search" placeholder="Busca rutas" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="onSubmit()">Buscar</button>
+        <input #buscar class="form-control mr-sm-2 z-index-10" type="search" placeholder="Busca rutas"
+            aria-label="Search" (keyup)="onSubmit()">
+        <nav id="menu_busqueda">
+            <ul class="menubusq">
+                <li class="d-flex" *ngFor="let ruta of rutas;index as i"><a [routerLink]="['/rutas/'+ruta.id]"
+                        class="">{{i+1}}.
+                        {{ruta.nombre}}</a></li>
+            </ul>
+        </nav>
+
+        <button class="btn btn-lg btn-outline-success my-2 my-sm-0" type="button" (click)="onSubmit()">Buscar</button>
     </form>
 
-    <div>
+    <!-- <div>
         <button type="button" class="btn btn-info btn-block" [routerLink]="['/rutas/new']">Sube tu
             ruta</button>
-    </div>
+    </div> -->
+
+
+    <!-- PRUEBA -->
+    <nav id="menu_gral">
+        <ul>
+            <li><a routerLink="/home" fragment="listarutas">RUTAS</a>
+                <ul>
+                    <li><a [routerLink]="['/rutas']">Listado de rutas</a></li>
+                    <li><a [routerLink]="['/home']" fragment="listarutas">Mejores rutas</a></li>
+                    <li><a [routerLink]="['/rutas/new']">Añade tu ruta</a></li>
+                </ul>
+            </li>
+            <li><a routerLink="/home" fragment="listaeventos">EVENTOS</a>
+                <ul>
+                    <li><a [routerLink]="['/eventos']">Listado de eventos</a></li>
+                    <li><a href="#">Añade un evento nuevo</a></li>
+                </ul>
+            </li>
+            <li><a routerLink="/home" fragment="grupos">GRUPOS</a></li>
+            <li><a routerLink="." fragment="link-info">INFO</a>
+                <ul>
+                    <li><a [routerLink]="['/info']">Historia del Movimiento</a></li>
+                    <li><a [routerLink]=" ['/secciones']">Secciones</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- PRUEBA -->
+
 
 
 

@@ -78,3 +78,19 @@
     background-color: rgb(185, 179, 179);
     background-blend-mode: multiply;
 }
+
+.baden1 {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #6bd1b6;
+    padding: 70px 30px 0 30px;
+}
+
+.baden2 {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #FAD44E;
+    padding-left: 30px;
+}
