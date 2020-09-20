@@ -1,78 +1,80 @@
 <app-navbar></app-navbar>
-<div class="container">
-    <!-- <h2 id="link-rutas">LISTA DE RUTAS</h2> -->
+<div class="container-fluid">
+    <div class="container">
+        <!-- <h2 id="link-rutas">LISTA DE RUTAS</h2> -->
 
-    <!-- NAVBAR INICIO-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
-        <a [routerLink]="['/rutas']" class="text-muted">
-            <h2>LISTA DE RUTAS</h2>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- NAVBAR INICIO-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+            <a [routerLink]="['/rutas']" class="text-muted">
+                <h2>LISTA DE RUTAS</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            </ul>
-            <!-- <form class="form-inline my-2 my-lg-0"> -->
-            <input #buscar class="form-control ml-4" type="search" placeholder="Buscar" aria-label="Buscar">
-            <!-- El decorador #buscar me sirve para pasar el campo input al ts -->
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="onSubmit()">Buscar</button>
-            <!-- <input [(ngModel)]="buscar" placeholder="Buscar" (keyup)="onSubmit($event)"> -->
-            <!-- </form> -->
-        </div>
-    </nav>
-    <!-- NAVBAR FIN -->
-
-
-
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <!-- <form class="form-inline my-2 my-lg-0"> -->
+                <input #buscar class="form-control ml-4" type="search" placeholder="Buscar" aria-label="Buscar">
+                <!-- El decorador #buscar me sirve para pasar el campo input al ts -->
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="onSubmit()">Buscar</button>
+                <!-- <input [(ngModel)]="buscar" placeholder="Buscar" (keyup)="onSubmit($event)"> -->
+                <!-- </form> -->
+            </div>
+        </nav>
+        <!-- NAVBAR FIN -->
 
 
 
 
 
-    <div class="addScroll">
-        <div class="card mb-3 shadow bg-white rounded" *ngFor="let ruta of rutas">
-            <a [routerLink]="['/rutas/'+ruta.id]" class="text-muted">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <div class="foto" style="background-image: url({{ruta.arrImagenes[0]}});">
-                            <!-- <img [src]="ruta.arrImagenes[0]" class="card-img" alt="..."> -->
-                        </div>
-                        <div class="d-flex bd-highlight mb-3">
-                            <small class="mr-auto p-2 bd-highlight">{{ruta.usuario}}</small>
-                            <p class="card-text p-2 bd-highlight" [ngSwitch]="ruta.puntuacion">
-                                <img src="assets/cinco.png" *ngSwitchCase="5">
-                                <img src="assets/cuatro.png" *ngSwitchCase="4">
-                                <img src="assets/tres.png" *ngSwitchCase="3">
-                                <img src="assets/dos.png" *ngSwitchCase="2">
-                                <img src="assets/uno.png" *ngSwitchCase="1">
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title font-weight-bolder">{{ruta.nombre}}</h5>
-                            <p class="card-text font-weight-lighter descripcion">{{ruta.descripcion}}</p>
-                            <div class="cardfooter">
-                                <p class="card-text"><small class="text-muted">Distancia:
-                                        <strong>{{ruta.distancia}}km</strong></small></p>
-                                <p class="card-text"><small class="text-muted">Duracion:
-                                        <strong>{{ruta.duracion}}h</strong></small></p>
-                                <p class="card-text"><small class="text-muted">Altura máxima:
-                                        <strong>{{ruta.altitud_max}}m</strong></small>
-                                </p>
-                                <p class="card-text circular" [ngSwitch]="ruta.circular">
-                                    <small class="text-muted">Tipo:</small>
-                                    <img src="assets/circularNo.png" *ngSwitchCase="0">
-                                    <img src="assets/circularSi.png" *ngSwitchCase="1">
+
+
+
+        <div class="addScroll">
+            <div class="card mb-3 shadow bg-white rounded" *ngFor="let ruta of rutas">
+                <a [routerLink]="['/rutas/'+ruta.id]" class="text-muted">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <div class="foto" style="background-image: url({{ruta.arrImagenes[0]}});">
+                                <!-- <img [src]="ruta.arrImagenes[0]" class="card-img" alt="..."> -->
+                            </div>
+                            <div class="d-flex bd-highlight mb-3">
+                                <small class="mr-auto p-2 bd-highlight">{{ruta.usuario}}</small>
+                                <p class="card-text p-2 bd-highlight" [ngSwitch]="ruta.puntuacion">
+                                    <img src="assets/cinco.png" *ngSwitchCase="5">
+                                    <img src="assets/cuatro.png" *ngSwitchCase="4">
+                                    <img src="assets/tres.png" *ngSwitchCase="3">
+                                    <img src="assets/dos.png" *ngSwitchCase="2">
+                                    <img src="assets/uno.png" *ngSwitchCase="1">
                                 </p>
                             </div>
                         </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bolder">{{ruta.nombre}}</h5>
+                                <p class="card-text font-weight-lighter descripcion">{{ruta.descripcion}}</p>
+                                <div class="cardfooter">
+                                    <p class="card-text"><small class="text-muted">Distancia:
+                                            <strong>{{ruta.distancia}}km</strong></small></p>
+                                    <p class="card-text"><small class="text-muted">Duracion:
+                                            <strong>{{ruta.duracion}}h</strong></small></p>
+                                    <p class="card-text"><small class="text-muted">Altura máxima:
+                                            <strong>{{ruta.altitud_max}}m</strong></small>
+                                    </p>
+                                    <p class="card-text circular" [ngSwitch]="ruta.circular">
+                                        <small class="text-muted">Tipo:</small>
+                                        <img src="assets/circularNo.png" *ngSwitchCase="0">
+                                        <img src="assets/circularSi.png" *ngSwitchCase="1">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     </div>
 </div>

@@ -5,6 +5,9 @@ agm-map {
 
 .container-fluid {
     background-color: lavender;
+    font-family: 'Grandstander', cursive;
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Ranchers', cursive; */
 }
 
 .container {
@@ -65,7 +68,6 @@ agm-map {
     border-bottom: 1px dotted grey;
 }
 
-
 /* Estilos formulario */
 
 input.ng-valid.ng-touched {
@@ -79,4 +81,3 @@ input.ng-invalid.ng-touched {
 .error {
     color: tomato;
 }
-

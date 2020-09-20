@@ -1,4 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Gloria+Hallelujah&family=Long+Cang&family=Pacifico&family=Satisfy&display=swap');
+/* Estas fuentas para menus */
+
+/* font-family: 'Caveat', cursive;
+
+font-family: 'Gloria Hallelujah', cursive;
+
+font-family: 'Long Cang', cursive;
+
+font-family: 'Pacifico', cursive;
+
+font-family: 'Satisfy', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@300;400;700&family=Montserrat:wght@200;400;700;800&family=Ranchers&display=swap');
+/* Estas fuentes para textos normales */
+
+/* font-family: 'Grandstander', cursive;
+
+font-family: 'Montserrat', sans-serif;
+
+font-family: 'Ranchers', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Cedarville+Cursive&family=Charmonman:wght@400;700&family=Montez&display=swap');
+/* Estas fuentes para el titulo scRoutes */
+
+/* 
+font-family: 'Bad Script', cursive;
+
+font-family: 'Cedarville Cursive', cursive;
+
+font-family: 'Charmonman', cursive;
+
+font-family: 'Montez', cursive; */
+
 html {
     scroll-behavior: smooth;
+}
+
+:root {
+    --color-azul: #021c1e;
+    --color-verdeoscuro: #004445;
+    --color-verde: #2c7873;
+    --color-verdeclaro: #6fb98f;
+    --color-amarillo: #FAD44E;
+    /* --fuentePrincipal: 'Montserrat', sans-serif;
+    --fuenteSecundaria: 'Handlee', cursive; */
 }

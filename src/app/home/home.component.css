@@ -79,18 +79,19 @@
     background-blend-mode: multiply;
 }
 
-.baden1 {
-    font-family: 'Oxygen', sans-serif;
-    font-size: 35px;
+.baden1, .baden2 {
+    font-family: 'Caveat', cursive;
+    font-size: 50px;
     font-weight: 700;
     color: #6bd1b6;
-    padding: 70px 30px 0 30px;
+    /* padding: 70px 30px 0 30px; */
 }
 
 .baden2 {
-    font-family: 'Oxygen', sans-serif;
-    font-weight: 300;
     font-size: 20px;
     color: #FAD44E;
-    padding-left: 30px;
+}
+
+.vh-40 {
+    height: 40vh;
 }
