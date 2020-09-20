@@ -1,10 +1,10 @@
 .container-fluid {
     font-family: var(--fuentePrincipal);
     background-color: var(--color-verde);
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
-.card, nav {
+.card {
     background-color: lavender;
 }
 

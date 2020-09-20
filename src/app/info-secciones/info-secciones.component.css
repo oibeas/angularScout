@@ -1,7 +1,9 @@
 .container-fluid {
     text-align: center;
-    background-color: lavender;
+    background-color: var(--color-verde);
     padding-top: 80px;
+    padding-bottom: 130px;
+    color: white;
 }
 
 .navbar {
@@ -43,7 +45,8 @@
 } */
 
 .impar{
-    background-color: white;
+    background-color: lavender;
+    color: black;
     border-radius: 10px;
 }
 

@@ -1,3 +1,9 @@
+.container-fluid {
+    font-family: var(--fuentePrincipal);
+    background-color: var(--color-verde);
+    padding-top: 30px;
+}
+
 .descripcion {
     height: 120px;
     overflow: hidden;
@@ -6,7 +12,27 @@
 }
 
 .card {
-    min-height: 350px;
+    background-color: lavender;
+}
+
+.card h2 {
+    color: var(--color-verdeoscuro);
+}
+
+a {
+    text-decoration: none;
+}
+
+.card-body, small {
+    color: var(--color-azul);
+}
+
+.cardfooter {
+    color: var(--color-azul);
+}
+
+.cardfooter p {
+    margin-right: 10px;
 }
 
 .form-control {
