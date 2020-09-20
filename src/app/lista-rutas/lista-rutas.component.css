@@ -1,17 +1,27 @@
 .container-fluid {
-    font-family: 'Grandstander', cursive;
+    font-family: var(--fuentePrincipal);
+    background-color: var(--color-verde);
+    padding-top: 80px;
 }
 
-nav {
-    background-color: #1a1a2e;
+.card, nav {
+    background-color: lavender;
 }
 
-nav a, span {
-    color: white;
+.card h2 {
+    color: var(--color-verdeoscuro);
+}
+
+a {
+    text-decoration: none;
+}
+
+.card-body, small {
+    color: var(--color-azul);
 }
 
 .cardfooter {
-    display: flex;
+    color: var(--color-azul);
 }
 
 .cardfooter p {
@@ -35,4 +45,5 @@ nav a, span {
     height: 200px;
     background-size: cover;
     background-position: center center;
+    margin: 10px;
 }
