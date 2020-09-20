@@ -1,38 +1,53 @@
 <div class="container-fluid frame">
     <div class="container">
         <div class="row pt-4">
+            <div class="col-7">
+                <div>
+                    <input #buscar class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+                </div>
+            </div>
+            <div class="col-2">
+                <div>
+                    <!-- El decorador #buscar me sirve para pasar el campo input al ts -->
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button"
+                        (click)="onSubmit()">Buscar</button>
+                </div>
+            </div>
             <div class="col-8">
-                <agm-map (mapClick)="clickedMap($event)" [mapTypeId]="mapTypeId" [fitBounds]="true">
-                    <agm-marker (markerClick)="clickedMarker(infoWindow)" *ngFor="let grupo of grupos "
-                        [latitude]="grupo.latitud" [longitude]="grupo.longitud" [agmFitBounds]>
-                        <agm-info-window #infoWindow>
-                            <h4>{{grupo.nombre}}</h4>
-                            <p>{{grupo.fecha_creacion}}</p>
-                            <p>{{grupo.direccion}}</p>
-                            <a [href]="grupo.web" target="_blank">{{grupo.web}}</a>
-                        </agm-info-window>
-                    </agm-marker>
-                </agm-map>
-                <button (click)="getCurrentPosition()">Obtener dirección actual</button>
+                <div>
+                    <agm-map (mapClick)="clickedMap($event)" [mapTypeId]="mapTypeId" [fitBounds]="true">
+                        <agm-marker (markerClick)="clickedMarker(infoWindow)" *ngFor="let grupo of grupos "
+                            [latitude]="grupo?.latitud" [longitude]="grupo?.longitud" [agmFitBounds]>
+                            <agm-info-window #infoWindow>
+                                <h4>{{grupo?.nombre}}</h4>
+                                <p>{{grupo?.fecha_creacion}}</p>
+                                <p>{{grupo?.direccion}}</p>
+                                <a [href]="grupo?.web" target="_blank">{{grupo?.web}}</a>
+                            </agm-info-window>
+                        </agm-marker>
+                    </agm-map>
+                    <button (click)="getCurrentPosition()">Obtener dirección actual</button>
+                </div>
             </div>
             <div class="col-4 addScroll">
-                <ul id="modalActivate" data-toggle="modal" [attr.data-target]="'#modal'+grupo.id"
+                <!-- Modal -->
+                <ul id="modalActivate" data-toggle="modal" [attr.data-target]="'#modal'+grupo?.id"
                     *ngFor="let grupo of grupos">
                     <li>
-                        <h4>{{grupo.nombre}}</h4>
-                        <p class="my-0">{{grupo.direccion}}</p>
-                        <p class="my-0">{{grupo.ciudad}}</p>
-                        <a class="my-0" [href]="grupo.web" target="_blank">{{grupo.web}}</a>
-                        <div class="modal fade right" [id]="'modal'+grupo.id" tabindex="-1" role="dialog"
+                        <h4>{{grupo?.nombre}}</h4>
+                        <p class="my-0">{{grupo?.direccion}} - {{grupo?.cp}}</p>
+                        <p class="my-0">{{grupo?.ciudad}}</p>
+                        <a class="my-0" [href]="grupo?.web" target="_blank">{{grupo?.web}}</a>
+                        <div class="modal fade right" [id]="'modal'+grupo?.id" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg modal-side modal-bottom-right modal-notify modal-info"
                                 role="document">
                                 <div class="modal-content">
-                                    <div class="modal-header" [ngSwitch]="grupo.asociacion">
+                                    <div class="modal-header" [ngSwitch]="grupo?.asociacion">
                                         <div>
                                             <h4 class="modal-title heading-lead" id="exampleModalPreviewLabel">
                                                 <img src="../../assets/promesa64.png" alt="">
-                                                <strong>{{grupo.nombre}}</strong>
+                                                <strong>{{grupo?.nombre}}</strong>
                                                 <img src="../../assets/ASDE.png" alt="" *ngSwitchCase="'ASDE'">
                                                 <img src="../../assets/AESGE(azul).jpg" alt="" *ngSwitchCase="'AESGE'">
                                                 <img src="../../assets/AISG.png" alt="" *ngSwitchCase="'AISG'">
@@ -55,11 +70,11 @@
                                                     <h4>
                                                         <strong>Ficha:</strong>
                                                     </h4>
-                                                    <p><strong>Nombre:</strong> {{grupo.nombre}}</p>
-                                                    <p><strong>Año de fundación:</strong> {{grupo.fecha_creacion}}</p>
-                                                    <p><strong>Dirección:</strong> {{grupo.direccion}}</p>
-                                                    <p><strong>Ciudad: </strong> {{grupo.ciudad}}</p>
-                                                    <p><strong>Código Postal:</strong> {{grupo.cp}}</p>
+                                                    <p><strong>Nombre:</strong> {{grupo?.nombre}}</p>
+                                                    <p><strong>Año de fundación:</strong> {{grupo?.fecha_creacion}}</p>
+                                                    <p><strong>Dirección:</strong> {{grupo?.direccion}}</p>
+                                                    <p><strong>Ciudad: </strong> {{grupo?.ciudad}}</p>
+                                                    <p><strong>Código Postal:</strong> {{grupo?.cp}}</p>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -67,32 +82,33 @@
                                                     <h4>
                                                         <strong>Contacto:</strong>
                                                     </h4>
-                                                    <div *ngIf="grupo.email != ''">
+                                                    <div *ngIf="grupo?.email != ''">
                                                         <img src="../../assets/gmail24.png" alt="">
                                                         <p>{{grupo.email}}</p>
                                                     </div>
-                                                    <div *ngIf="grupo.telefono != 0">
+                                                    <div *ngIf="grupo?.telefono != 0">
                                                         <img src="../../assets/telefono.png" alt="">
-                                                        <p>{{grupo.telefono}}</p>
+                                                        <p>{{grupo?.telefono}}</p>
                                                     </div>
-                                                    <div *ngIf="grupo.web != ''">
+                                                    <div *ngIf="grupo?.web != ''">
                                                         <img src="../../assets/web24.png" alt="">
-                                                        <a [href]="grupo.web" target="_blank"> {{grupo.web}}</a>
+                                                        <a [href]="grupo?.web" target="_blank"> {{grupo?.web}}</a>
                                                     </div>
-                                                    <div *ngIf="grupo.twitter != ''">
+                                                    <div *ngIf="grupo?.twitter != ''">
                                                         <img src="../../assets/twitter24.png" alt="">
-                                                        <a [href]="grupo.twitter" target="_blank"> {{grupo.twitter}}</a>
+                                                        <a [href]="grupo?.twitter" target="_blank">
+                                                            {{grupo?.twitter}}</a>
                                                     </div>
-                                                    <div *ngIf="grupo.facebook != ''">
+                                                    <div *ngIf="grupo?.facebook != ''">
                                                         <img src="../../assets/facebook24.png" alt="">
-                                                        <a [href]="grupo.facebook" target="_blank">
-                                                            {{grupo.facebook}}</a>
+                                                        <a [href]="grupo?.facebook" target="_blank">
+                                                            {{grupo?.facebook}}</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <a class="btn-lg btn-success" target="_blank"
-                                                    [href]="'https://maps.google.com/?q='+'grupo scout'+' '+grupo.nombre+' '+grupo.direccion+' '+grupo.ciudad+''">Dónde
+                                                    [href]="'https://maps.google.com/?q='+'grupo scout'+' '+grupo?.nombre+' '+grupo?.direccion+' '+grupo?.ciudad+''">Dónde
                                                     encontrarnos</a>
                                             </div>
                                         </div>
@@ -106,11 +122,8 @@
                         </div>
                     </li>
                 </ul>
+                <!-- Modal -->
             </div>
-            <!-- Modal -->
-
-            <!-- Modal -->
         </div>
     </div>
-
 </div>

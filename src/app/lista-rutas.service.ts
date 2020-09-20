@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Ruta } from './models/ruta.models';
+import { Comentario } from './models/comentario.models';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 
@@ -30,6 +31,14 @@ export class ListaRutasService {
   getBusqueda(pBusqueda): Promise<Ruta[]> {
     // console.log(this.baseUrl + `/busqueda/${pBusqueda}`);
     return this.httpClient.get<Ruta[]>(this.baseUrl + `/busqueda/${pBusqueda}`).toPromise();
+  }
+
+  getComentarios(pRutaId): Promise<Comentario[]> {
+    return this.httpClient.get<Comentario[]>(`${this.baseUrl}/${pRutaId}/comentarios`).toPromise();
+  }
+
+  postComentario(pRutaId, pFormValue): Promise<Comentario> {
+    return this.httpClient.post<Comentario>(`${this.baseUrl}/${pRutaId}/comentarios`, pFormValue).toPromise();
   }
 
 }

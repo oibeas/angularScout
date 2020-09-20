@@ -26,7 +26,7 @@
                                     [longitude]="this.lastMarker.split(',')[0]" [agmFitBounds]
                                     [iconUrl]="{url: '../assets/fin-ruta7.png'}">
                                 </agm-marker>
-                                <agm-kml-layer [url]="'https://2a1d59583535.ngrok.io/api/rutas/kml/' + ruta?.id"
+                                <agm-kml-layer [url]="'https://335c29f9501b.ngrok.io/api/rutas/kml/' + ruta?.id"
                                     [clickable]="true">
                                 </agm-kml-layer>
                             </agm-map>
@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div>
-                                            <div class="card-text circular" [ngSwitch]="ruta.circular">
+                                            <div class="card-text circular" [ngSwitch]="ruta?.circular">
                                                 <img src="assets/circularNo.png" *ngSwitchCase="0">
                                                 <img src="assets/circularSi.png" *ngSwitchCase="1">
                                             </div>
@@ -115,7 +115,39 @@
                     </div>
                 </div>
             </div>
+            <div class="col-8 mt-5">
+                <h5>Comentarios: {{comentarios?.length}}</h5>
+                <div class="comentarios p-2">
+                    <ul class="list-unstyled" *ngFor="let comentario of comentarios">
+                        <li class="media">
+                            <img src="../assets/usuario.png" class="mr-3" alt="...">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1">{{comentario?.usuario}}</h5>
+                                <p>{{comentario?.comentario}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <div class="form-group mt-3">
+                            <label>Deja tu comentario</label>
+                            <textarea class="form-control" name="Comentario" cols="120" rows="5"
+                                formControlName="comentario"></textarea>
+                            <p class="error"
+                                *ngIf="formulario.controls.comentario.errors?.required && formulario.controls.comentario.touched">
+                                Ups! Parece que el campo comentario está vacío
+                            </p>
+                        </div>
+                        <div>
+                            <input type="submit" value="Enviar" [disabled]="!formulario.valid"
+                                class="btn btn-success btn-block">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<!-- {{ formulario.value | json }} -->
 <app-footer></app-footer>

@@ -82,7 +82,6 @@ export class FormRutaComponent implements OnInit {
 
     const response = await this.listaRutasService.postForm(body);
     console.log(response['ruta'].id);
-    // const { ruta: { id } } = response
     this.router.navigate(['/rutas', response['ruta'].id])
   }
 
