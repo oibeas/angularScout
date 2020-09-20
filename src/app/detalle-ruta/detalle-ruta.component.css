@@ -45,3 +45,38 @@ agm-map {
     border: 2px solid white;
     transition: 0.3s;
 } */
+
+/* Estilos comentarios */
+
+.comentarios {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.comentarios ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    margin-bottom: 0rem;
+}
+
+.comentarios ul li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted grey;
+}
+
+
+/* Estilos formulario */
+
+input.ng-valid.ng-touched {
+    border: 1px solid lightgreen;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.error {
+    color: tomato;
+}
+

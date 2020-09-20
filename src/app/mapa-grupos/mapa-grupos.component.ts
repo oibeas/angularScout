@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GruposService } from '../grupos.service';
 import { Grupo } from '../models/grupo.model';
 
@@ -17,6 +17,8 @@ export class MapaGruposComponent implements OnInit {
   located: boolean;
   previous: any;
 
+  @ViewChild("buscar") inputBusqueda: ElementRef;
+
 
   ngOnInit(): void {
     this.gruposService.getAll()
@@ -32,9 +34,15 @@ export class MapaGruposComponent implements OnInit {
     this.located = false
   }
 
-  // getById($event) {
-  //   console.log($event);
-  // }
+  async onSubmit() {
+    // console.log(this.inputBusqueda.nativeElement.value);
+    try {
+      this.grupos = await this.gruposService.getBusqueda(this.inputBusqueda.nativeElement.value);
+      // console.log(this.eventos);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   //Evento para que se cierre la ventana de información previa cuando pincho sobre una nueva
   clickedMarker(infowindow) {
