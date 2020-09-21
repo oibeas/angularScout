@@ -51,7 +51,6 @@ export class DetalleRutaComponent implements OnInit {
       this.lastMarker = this.arrCoordenadas[this.arrCoordenadas.length - 2];
 
       this.comentarios = await this.listaRutasService.getComentarios(params.rutaId)
-      // console.log(this.comentarios, 'COMENTARIOS:');
     });
   }
 
@@ -59,14 +58,15 @@ export class DetalleRutaComponent implements OnInit {
     // console.log(this.formulario.value)
     const body = this.formulario.value;
     //asigno por defecto la foreing key de default_user
-    body.fk_usuarioId = 1
+    // body.fk_usuarioId = 1
 
     const response = await this.listaRutasService.postComentario(this.ruta.id, body);
-    console.log(response);
 
-    //vuelve a pintar los comentarios, añadiendo el nuevo
-    // //DE MOMENTO AQUÍ NO ESTÁ ENTRANDO EL FLUJO
-    this.router.navigate([`/rutas/${this.ruta.id}`])
+    //vuelve a pintar los comentarios, añadiendo el nuevo y vaciando el campo
+    this.comentarios = await this.listaRutasService.getComentarios(this.ruta.id);
+    this.formulario = new FormGroup({
+      comentario: new FormControl('', [Validators.required]),
+    });
 
   }
 }

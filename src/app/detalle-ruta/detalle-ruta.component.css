@@ -4,10 +4,8 @@ agm-map {
 }
 
 .container-fluid {
-    background-color: lavender;
-    font-family: 'Grandstander', cursive;
-    /* font-family: 'Montserrat', sans-serif; */
-    /* font-family: 'Ranchers', cursive; */
+    background-color: var(--color-verde);
+    font-family: var(--fuenteSecundaria);
 }
 
 .container {
@@ -15,12 +13,12 @@ agm-map {
 }
 
 .info {
-    background-color: white;
+    background-color: lavender;
     border-radius: 10px;
 }
 
 .info-usuario {
-    background-color: white;
+    background-color: lavender;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -34,6 +32,10 @@ agm-map {
     align-items: center;
 }
 
+.datos .row {
+    text-align: center;
+}
+
 .fotos div div {
     width: 100%;
     height: 100%;
@@ -44,15 +46,15 @@ agm-map {
     object-fit: cover;
 }
 
-/* .fotos div div:hover {
-    border: 2px solid white;
-    transition: 0.3s;
-} */
+h3, h4, label {
+    font-weight: bold;
+    color: var(--color-amarillo);
+}
 
 /* Estilos comentarios */
 
 .comentarios {
-    background-color: white;
+    background-color: lavender;
     border-radius: 10px;
 }
 
@@ -80,4 +82,8 @@ input.ng-invalid.ng-touched {
 
 .error {
     color: tomato;
+}
+
+textarea {
+    background-color: lavender;
 }

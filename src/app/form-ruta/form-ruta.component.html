@@ -4,11 +4,11 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-12">
-                <div>
-                    <h3>Cuéntanos tu última ruta</h3>
+                <div class="d-flex align-content-center justify-content-center align-items-center">
+                    <h3 class="pt-4">Cuéntanos tu última ruta</h3>
                 </div>
             </div>
-            <div class="col-12 my-5">
+            <div class="col-12 mt-3 mb-5">
                 <div>
                     <agm-map [zoom]="zoom" [latitude]="lat" [longitude]="lng" [mapTypeId]="mapTypeId"
                         (mapReady)="mapReadyHandler($event)">

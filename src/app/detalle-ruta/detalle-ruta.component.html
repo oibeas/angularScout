@@ -1,21 +1,17 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
     <div class="container">
-        <div class="row pt-5 mb-4">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-8">
-                        <div>
-                            <h3>{{ruta?.nombre}}</h3>
-                        </div>
-                    </div>
+        <div class="row pt-5">
+            <div class=" col-12 col-sm-12 col-lg-9">
+                <div>
+                    <h3 class="mb-4">{{ruta?.nombre}} - {{ruta.localizacion}}</h3>
                 </div>
             </div>
         </div>
         <div class="row mb-5">
             <div class="col-12">
                 <div class="row">
-                    <div class="col-9">
+                    <div class="col-12 col-sm-12 col-lg-9">
                         <div>
                             <agm-map *ngIf="ruta" [mapTypeId]="mapTypeId" [fitBounds]="true">
                                 <agm-marker [latitude]="this.firstMarker.split(',')[1]"
@@ -32,22 +28,23 @@
                             </agm-map>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-sm-12 col-lg-3">
                         <div class="row">
-                            <div class="col-12 mb-3 info-usuario">
+                            <div class="col-6 col-sm-6 col-lg-12 mt-3 mb-3 info-usuario">
                                 <div>
                                     <h5>{{ruta?.usuario}}</h5>
                                 </div>
                             </div>
-                            <div class="col-12 mb-3">
+                            <div
+                                class="col-6 col-sm-6 col-lg-12 d-flex justify-content-center align-items-center align-content-center mb-3">
                                 <div>
-                                    <button type="button" class="btn btn-success btn-block">Valora esta
+                                    <button type="button" class="btn btn-warning btn-block">Valora esta
                                         ruta</button>
                                 </div>
                             </div>
                             <div class="col-12 info datos">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12 col-sm-12 col-lg-12">
                                         <div class="d-flex bd-highlight mb-3">
                                             <p class="card-text my-0 mx-auto p-2 bd-highlight"
                                                 [ngSwitch]="ruta?.puntuacion">
@@ -59,32 +56,32 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4 col-sm-6 col-lg-6">
                                         <div>
                                             <p><strong>Distancia: </strong>{{ruta?.distancia}} Km</p>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4 col-sm-6 col-lg-6">
                                         <div>
                                             <p><strong>Duración: </strong>{{ruta?.duracion}}</p>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4 col-sm-6 col-lg-6">
                                         <div>
                                             <p><strong>Altitud min.: </strong>{{ruta?.altitud_min}} m</p>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4 col-sm-6 col-lg-6">
                                         <div>
                                             <p><strong>Altitud máx.: </strong>{{ruta?.altitud_max}} m</p>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4 col-sm-6 col-lg-6">
                                         <div>
                                             <p><strong>Dificultad: </strong>{{ruta?.dificultad}}</p>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4 col-sm-6 col-lg-6">
                                         <div>
                                             <div class="card-text circular" [ngSwitch]="ruta?.circular">
                                                 <img src="assets/circularNo.png" *ngSwitchCase="0">
@@ -100,7 +97,7 @@
             </div>
         </div>
         <div class="row pb-5">
-            <div class="col-9">
+            <div class="col-12 col-sm-12 col-lg-9">
                 <div class="mb-4">
                     <h4>DESCRIPCIÓN DE LA RUTA:</h4>
                 </div>
@@ -108,15 +105,15 @@
                     <p>{{ruta?.descripcion}}</p>
                 </div>
             </div>
-            <div class="col-3 fotos">
+            <div class="col-12 col-sm-12 col-lg-3 fotos">
                 <div class="row">
                     <div class="col-12 mb-2 mt-5" *ngFor="let imagen of ruta?.imagenes.split(',')">
                         <img [src]="sanitizeImageUrl(imagen)" alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-8 mt-5">
-                <h5>Comentarios: {{comentarios?.length}}</h5>
+            <div class="col-12 col-sm-12 col-lg-8 mt-5">
+                <h4>Comentarios: {{comentarios?.length}}</h4>
                 <div class="comentarios p-2">
                     <ul class="list-unstyled" *ngFor="let comentario of comentarios">
                         <li class="media">
@@ -131,7 +128,7 @@
                 <div>
                     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
                         <div class="form-group mt-3">
-                            <label>Deja tu comentario</label>
+                            <label>Deja tu comentario:</label>
                             <textarea class="form-control" name="Comentario" cols="120" rows="5"
                                 formControlName="comentario"></textarea>
                             <p class="error"
@@ -141,7 +138,7 @@
                         </div>
                         <div>
                             <input type="submit" value="Enviar" [disabled]="!formulario.valid"
-                                class="btn btn-success btn-block">
+                                class="btn btn-block btn-warning">
                         </div>
                     </form>
                 </div>

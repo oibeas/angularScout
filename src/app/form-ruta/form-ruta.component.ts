@@ -54,9 +54,9 @@ export class FormRutaComponent implements OnInit {
   public mapReadyHandler(map: google.maps.Map): void {
     this.mapClickListener = map.addListener('click', (e: google.maps.MouseEvent) => {
       this.zone.run(() => {
-        console.log(e, e.latLng.lat(), e.latLng.lng());
+        // console.log(e, e.latLng.lat(), e.latLng.lng());
         this.arrCoordenadas.push({ lat: e.latLng.lat(), lng: e.latLng.lng() });
-        console.log(this.arrCoordenadas, 'coordenadas');
+        // console.log(this.arrCoordenadas, 'coordenadas');
 
         this.firstMarker = this.arrCoordenadas[0];
         this.lastMarker = this.arrCoordenadas[this.arrCoordenadas.length - 1];
@@ -81,7 +81,7 @@ export class FormRutaComponent implements OnInit {
     body.puntos_ruta = coordenadas
 
     const response = await this.listaRutasService.postForm(body);
-    console.log(response['ruta'].id);
+    // console.log(response['ruta'].id);
     this.router.navigate(['/rutas', response['ruta'].id])
   }
 
