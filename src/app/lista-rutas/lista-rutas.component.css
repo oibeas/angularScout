@@ -15,6 +15,10 @@ a {
     text-decoration: none;
 }
 
+.caja-rutas {
+    display: block;
+}
+
 .card-body, small {
     color: var(--color-azul);
 }

@@ -1,9 +1,14 @@
+.container-fluid {
+    background-color: lavender;
+}
+
 .addScroll {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 60vh;
+    height: 80vh;
     scrollbar-color: var(--color-verdeclaro) #f5f5f5;
     scrollbar-width: thin;
+    margin-bottom: 20px;
 }
 
 .addScroll::-webkit-scrollbar-track {
@@ -99,3 +104,7 @@
 .card-title {
     font-family: var(--fuenteSecundaria);
 }
+
+/* .borde {
+    border: 2px solid black
+} */
