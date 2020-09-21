@@ -8,6 +8,15 @@ agm-map {
     height: 50vh;
     
 }
+
+strong {
+    color: var(--color-azul);
+}
+
+.container-fluid {
+    font-family: var(--fuenteSecundaria);
+}
+
 .container-fluid .frame {
     height: 100vh;
     background-color: rgb(245, 245, 245);
@@ -66,7 +75,7 @@ agm-map {
 }
 
 .container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-header, .modal-footer {
-    background-color: honeydew;
+    background-color: var(--color-verde);
     width: 100%;
 }
 
@@ -88,6 +97,20 @@ agm-map {
 
 .container-fluid .container .row .addScroll ul li .modal .modal-dialog .modal-content .modal-body .row .col-6 .shadow {
     min-height: 50vh;
+    color: white;
+    background-color: var(--color-verdeclaro);
+}
+
+.shadow .p-3 .mb-2 .rounded {
+    background-color: var(--color-verdeoscuro);
+}
+
+#modalActivate ul li h4 {
+    color: var(--color-azul);
+}
+
+#amarillo {
+    color: var(--color-amarillo);
 }
 
 .modal-body .row .col-6 .contacto p {

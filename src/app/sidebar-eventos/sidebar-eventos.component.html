@@ -1,19 +1,18 @@
-<div class="container">
-    <h2>ULTIMOS EVENTOS</h2>
-    <table class="table">
-        <tbody>
-            <tr *ngFor="let evento of eventos; index as i">
-                <a href="eventos/{{evento.id}}" class="text-muted">
-                    <th scope="row">{{i+1}}</th>
-                    <td class="font-weight-bolder">{{evento.nombre}}
-                        <p class="font-weight-lighter">{{evento.ciudad}}</p>
-                        <small class="font-weight-lighter">{{evento.fecha | date:'dd MMM, yyyy'}}</small>
-
-                    </td>
-                </a>
-            </tr>
-        </tbody>
-
-    </table>
-
+<div class="container-fluid">
+    <div class="container">
+        <h2>ULTIMOS EVENTOS</h2>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let evento of eventos; index as i">
+                    <a href="eventos/{{evento.id}}" class="text-muted">
+                        <th scope="row">{{i+1}}</th>
+                        <td class="font-weight-bolder">{{evento.nombre}}
+                            <p class="font-weight-lighter">{{evento.ciudad}}</p>
+                            <small class="font-weight-lighter">{{evento.fecha | date:'dd MMM, yyyy'}}</small>
+                        </td>
+                    </a>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

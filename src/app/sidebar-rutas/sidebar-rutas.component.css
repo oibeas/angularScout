@@ -1,0 +1,7 @@
+.container-fluid {
+    font-family: var(--fuenteSecundaria);
+}
+
+tr:hover {
+    background-color: lavender;
+}

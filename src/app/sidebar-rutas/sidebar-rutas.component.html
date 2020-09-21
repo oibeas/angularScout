@@ -1,32 +1,24 @@
-<div class="container">
-    <h2>MEJORES RUTAS</h2>
-    <table class="table">
-        <!-- <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">NOMBRE</th>
-            </tr>
-
-
-        </thead> -->
-        <tbody>
-            <tr *ngFor="let ruta of rutas; index as i">
-                <a [routerLink]="['/rutas/'+ruta.id]" class="text-muted">
-                    <th scope="row">{{i+1}}</th>
-                    <td class="font-weight-lighter">{{ruta.nombre}}
-                        <p class="font-weight-bolder">{{ruta.localizacion}}</p>
-                        <p class="card-text" [ngSwitch]="ruta.puntuacion">
-                            <img src="assets/cinco.png" *ngSwitchCase="5">
-                            <img src="assets/cuatro.png" *ngSwitchCase="4">
-                            <img src="assets/tres.png" *ngSwitchCase="3">
-                            <img src="assets/dos.png" *ngSwitchCase="2">
-                            <img src="assets/uno.png" *ngSwitchCase="1">
-                        </p>
-                    </td>
-                </a>
-            </tr>
-        </tbody>
-
-    </table>
-
+<div class="container-fluid">
+    <div class="container">
+        <h2>MEJORES RUTAS</h2>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let ruta of rutas; index as i">
+                    <a [routerLink]="['/rutas/'+ruta.id]" class="text-muted">
+                        <th scope="row">{{i+1}}</th>
+                        <td class="font-weight-lighter">{{ruta.nombre}}
+                            <p class="font-weight-bolder">{{ruta.localizacion}}</p>
+                            <p class="card-text" [ngSwitch]="ruta.puntuacion">
+                                <img src="assets/cinco.png" *ngSwitchCase="5">
+                                <img src="assets/cuatro.png" *ngSwitchCase="4">
+                                <img src="assets/tres.png" *ngSwitchCase="3">
+                                <img src="assets/dos.png" *ngSwitchCase="2">
+                                <img src="assets/uno.png" *ngSwitchCase="1">
+                            </p>
+                        </td>
+                    </a>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
