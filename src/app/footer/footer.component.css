@@ -1,16 +1,18 @@
 /*FOOTER*/
 
 footer {
-    background: #16222A;
-    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
-    background: linear-gradient(59deg, #3A6073, #16222A);
+    background: var(--color-azul);
+    background: -webkit-linear-gradient(59deg, var(--color-verdeoscuro), var(--color-azul));
+    background: linear-gradient(59deg, var(--color-verdeoscuro), var(--color-azul));
+    /* #3A6073, #16222A */
     color: white;
     margin-top: 100px;
+    font-family: var(--fuentePrincipal);
 }
 
 footer a {
     color: #fff;
-    font-size: 14px;
+    font-size: 20px;
     transition-duration: 0.2s;
 }
 
@@ -20,7 +22,7 @@ footer a:hover {
 }
 
 .copy {
-    font-size: 12px;
+    font-size: 16px;
     padding: 10px;
     border-top: 1px solid #FFFFFF;
 }

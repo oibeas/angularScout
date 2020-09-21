@@ -6,7 +6,7 @@
   background-color: rgb(185, 179, 179);
   background-blend-mode: multiply;
   height: 150vh;
-  font-family: 'Oxygen', sans-serif;
+  font-family: var(--fuenteTerciaria);
   font-weight: 300;
   color: var(--color-amarillo);
   margin: 0;
@@ -19,14 +19,14 @@
   font-weight: 700;
   color: var(--color-verdeclaro);
   margin-top: 100px;
-  font-family: 'Caveat', cursive;
+  font-family: var(--fuentePrincipal);
 }
 
 .baden2 {
-  font-family: 'Caveat', cursive;
+  font-family: var(--fuentePrincipal);
   font-weight: 700;
   font-size: 20px;
-  color: #FAD44E;
+  color: var(--color-amarillo);
 }
 
 .empty {
@@ -51,7 +51,7 @@
   margin: 0 2px;
   padding: 0;
   text-decoration: none;
-  font-size: 17px;
+  /* font-size: 17px; */
 }
 
 .navbar a.active {
@@ -65,7 +65,7 @@
 .navbar .logo:hover {
   animation: shakeX;
   animation-duration: 0.8s;
-  animation-iteration-count: 1;
+  animation-iteration-count: 0.5;
 }
 
 .navbar img {
@@ -76,9 +76,26 @@
   max-width: 36px;
 }
 
-.navbar .text-left a:hover {
-  color: white;
+.loginboton {
+  font-family: var(--fuentePrincipal);
+  font-size: 24px;
 }
+
+.salir {
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: 0;
+  background-image: url("../../assets/salir.svg");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+/* .navbar .text-left a:hover {
+  color: white;
+} */
 
 .sticky {
   background-color: var(--color-azul);
@@ -104,7 +121,7 @@
 .card {
   opacity: 80%;
   max-width: 300px;
-  font-size: 10%;
+  /* font-size: 10%; */
 }
 
 .card:hover {
@@ -129,40 +146,129 @@
 } */
 
 .dropdown-menu {
-  background-color: #1a1a2e;
+  background-color: var(--color-azul);
 }
 
 .dropdown-menu a:hover {
-  color: #33A485;
+  color: var(--color-verdeclaro);
 }
 
 /* Tipos de letra del logo */
 
 .titulo {
-  font-family: 'Caveat', cursive;
-  /* font-family: 'Gloria Hallelujah', cursive; */
-  /* font-family: 'Long Cang', cursive; */
-  /* font-family: 'Pacifico', cursive; */
-  /* font-family: 'Satisfy', cursive; */
-  /* font-family: 'Grandstander', cursive; */
-  /* font-family: 'Montserrat', sans-serif; */
-  /* font-family: 'Ranchers', cursive; */
-  font-weight: 400;
+  font-family: var(--fuentePrincipal);
 }
 
 .titulo span {
-  /* font-family: 'Bad Script', cursive; */
-  /* font-family: 'Cedarville Cursive', cursive; */
   font-family: 'Charmonman', cursive;
-  /* font-family: 'Montez', cursive; */
   font-weight: 700;
   color: var(--color-verdeclaro);
   font-size: 30px;
 }
 
-/* Tipos de letra menus */
+/* NUEVO MENU */
 
-.dropdown a {
+#menu_gral {
+  width: 70%;
+  padding-left: 30px;
+  font-family: var(--fuentePrincipal);
+  font-size: 24px;
+}
+
+#menu_gral>ul li {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  position: relative;
+}
+
+#menu_gral li a {
+  display: block;
+  text-decoration: none;
+  font-size: 24px;
+  /* line-height: 2.5rem; */
+  color: rgb(255, 238, 238);
+}
+
+#menu_gral li ul {
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+}
+
+#menu_gral li:hover ul, #menu_gral li:focus ul {
+  width: 100%;
+  margin: 2rem 0rem 0rem -3rem;
+  opacity: 0.8;
+  z-index: 5;
+}
+
+#menu_gral li li {
+  display: block;
+  width: 100%;
+}
+
+#menu_gral li:hover li a, #menu_gral li:focus li a {
   font-family: 'Caveat', cursive;
   font-size: 24px;
+  background: var(--color-verdeoscuro);
+}
+
+#menu_gral li li a:hover, #menu_gral li li a:focus {
+  background: var(--color-verdeclaro);
+  color: var(--color-azul);
+}
+
+#menu_gral ul {
+  margin-top: 20px;
+}
+
+/* FIN MENU */
+
+.card-title {
+  font-family: var(--fuenteSecundaria);
+}
+
+.menuhamburguesa {
+  display: none;
+}
+
+/* MEDIAQUERYS */
+
+/* NAVBAR */
+
+@media (max-width: 1150px) {
+  #menu_gral {
+    width: 60%;
+    padding-left: 0px;
+  }
+}
+
+@media (max-width: 900px) {
+  #menu_gral {
+    width: 50%;
+  }
+  #menu_gral span {
+    display: none;
+  }
+  #menu_gral li:hover ul, #menu_gral li:focus ul {
+    width: 150%;
+  }
+  .card-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* MENU NUEVO HAMBURGUESA */
+
+@media (max-width: 768px) {
+  .menuhero {
+    display: none;
+  }
+  .menuhamburguesa {
+    display: block;
+  }
+  #menu_gral {
+    width: 0;
+  }
 }

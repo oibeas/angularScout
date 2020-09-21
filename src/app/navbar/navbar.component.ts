@@ -24,25 +24,27 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-
-
-
+    this.inputBusqueda.nativeElement.value = [];
   }
 
 
   //METODO BUSQUEDA EN NAVBAR
   async onSubmit() {
+
     // console.log(this.inputBusqueda.nativeElement.value);
     try {
       this.rutas = await this.listaRutasService.getBusqueda(this.inputBusqueda.nativeElement.value);
-      console.log(this.rutas);
+      // console.log(this.rutas);
     } catch (error) {
       console.log(error);
     }
   }
 
 
+  cerrarSesion() {
+    localStorage.removeItem("UsuarioscRoutes");
+    // const response = await localStorage.clear();
+  }
 
 }
 

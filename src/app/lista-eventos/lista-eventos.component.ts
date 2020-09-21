@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Evento } from '../models/evento.models';
 import { ListaEventosService } from '../lista-eventos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-eventos',
@@ -10,11 +11,23 @@ import { ListaEventosService } from '../lista-eventos.service';
 export class ListaEventosComponent implements OnInit {
 
   eventos: Evento[];
+  padding: string;
   @ViewChild("buscar") inputBusqueda: ElementRef; //Esto es para pasar el decorador input con el texto del input a la funcion getBusqueda
 
-  constructor(private listaEventosService: ListaEventosService) { }
+  constructor(
+    private listaEventosService: ListaEventosService,
+    private router: Router
+  ) {
+    this.padding = "";
+  }
 
   ngOnInit(): void {
+    this.padding = "0px";
+    const miroute = this.router.url;
+    if (miroute === "/eventos") {
+      this.padding = "70px";
+    }
+
     this.listaEventosService.getAll()
       .then(response => {
         this.eventos = response;

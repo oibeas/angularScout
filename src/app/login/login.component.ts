@@ -67,4 +67,9 @@ export class LoginComponent implements OnInit {
     }
 
   }
+
+  cerrarSesion() {
+    localStorage.removeItem("UsuarioscRoutes");
+    // const response = await localStorage.clear();
+  }
 }

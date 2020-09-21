@@ -23,4 +23,9 @@ export class HeroComponent implements OnInit {
       element.classList.remove('sticky');
     }
   }
+
+  cerrarSesion() {
+    localStorage.removeItem("UsuarioscRoutes");
+    // const response = await localStorage.clear();
+  }
 }
