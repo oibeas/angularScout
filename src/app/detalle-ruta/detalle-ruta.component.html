@@ -22,7 +22,7 @@
                                     [longitude]="this.lastMarker.split(',')[0]" [agmFitBounds]
                                     [iconUrl]="{url: '../assets/fin-ruta7.png'}">
                                 </agm-marker>
-                                <agm-kml-layer [url]="'https://9e8da89ae784.ngrok.io/api/rutas/kml/' + ruta?.id"
+                                <agm-kml-layer [url]="'https://78d3754c30d1.ngrok.io/api/rutas/kml/' + ruta?.id"
                                     [clickable]="true">
                                 </agm-kml-layer>
                             </agm-map>
@@ -38,8 +38,8 @@
                             <div
                                 class="col-6 col-sm-6 col-lg-12 d-flex justify-content-center align-items-center align-content-center mb-3">
                                 <div>
-                                    <button type="button" class="btn btn-warning btn-block">Valora esta
-                                        ruta</button>
+                                    <a routerLink="." fragment="comentarios" type="button"
+                                        class="btn btn-warning btn-block">Deja tu comentario</a>
                                 </div>
                             </div>
                             <div class="col-12 info datos">
@@ -117,7 +117,7 @@
                 <div class="comentarios p-2">
                     <ul class="list-unstyled" *ngFor="let comentario of comentarios">
                         <li class="media">
-                            <img src="../assets/usuario.png" class="mr-3" alt="...">
+                            <img src="../assets/avatar03.png" class="mr-3" alt="...">
                             <div class="media-body">
                                 <h5 class="mt-0 mb-1">{{comentario?.usuario}}</h5>
                                 <p>{{comentario?.comentario}}</p>
@@ -126,7 +126,7 @@
                     </ul>
                 </div>
                 <div>
-                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                    <form id="comentarios" [formGroup]="formulario" (ngSubmit)="onSubmit()">
                         <div class="form-group mt-3">
                             <label>Deja tu comentario:</label>
                             <textarea class="form-control" name="Comentario" cols="120" rows="5"

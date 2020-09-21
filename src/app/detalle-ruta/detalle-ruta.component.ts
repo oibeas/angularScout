@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaRutasService } from '../lista-rutas.service';
 import { Ruta } from '../models/ruta.models';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Comentario } from '../models/comentario.models';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -52,13 +52,17 @@ export class DetalleRutaComponent implements OnInit {
 
       this.comentarios = await this.listaRutasService.getComentarios(params.rutaId)
     });
+
+    // this.router.events.subscribe((evt) => {
+    //   if (!(evt instanceof NavigationEnd)) {
+    //     return;
+    //   }
+    //   window.scrollTo(0, 10)
+    // });
   }
 
   async onSubmit() {
-    // console.log(this.formulario.value)
     const body = this.formulario.value;
-    //asigno por defecto la foreing key de default_user
-    // body.fk_usuarioId = 1
 
     const response = await this.listaRutasService.postComentario(this.ruta.id, body);
 

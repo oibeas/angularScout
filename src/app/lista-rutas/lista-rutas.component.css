@@ -1,6 +1,7 @@
 .container-fluid {
     font-family: var(--fuenteSecundaria);
     background-color: var(--color-verde);
+    border-radius: 10px;
 }
 
 .card {

@@ -1,5 +1,5 @@
 .container-fluid {
-    background-color: lavender;
+    background-color: #d6d6fc;
 }
 
 .addScroll {
@@ -68,7 +68,7 @@
 }
 
 .card-img-overlay h3 {
-    color: var(--color-verdeclaro);
+    color: var(--color-amarillo);
     text-align: center;
     font-size: 50px;
     font-weight: 700;

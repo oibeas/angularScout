@@ -1,5 +1,10 @@
 .container-fluid {
     font-family: var(--fuenteSecundaria);
+    background-color: white;
+}
+
+td {
+    color: var(--color-azul);
 }
 
 tr:hover {

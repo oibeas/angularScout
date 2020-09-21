@@ -71,7 +71,7 @@
                 <li><a routerLink="/home" fragment="grupos">Grupos <span>Scout</span></a></li>
                 <li><a routerLink="." fragment="link-info">Info</a>
                     <ul>
-                        <li><a [routerLink]="['/info']">Historia del Movimiento</a></li>
+                        <li><a [routerLink]="['/info']">Historia scout</a></li>
                         <li><a [routerLink]=" ['/secciones']">Secciones</a></li>
                     </ul>
                 </li>
@@ -87,10 +87,6 @@
             <!-- FIN MENU HAMBURGUESA -->
         </nav>
         <!-- FIN MENU -->
-
-
-
-
         <div class="d-flex">
             <button class="salir" id="logout" ng-alt="Cerrar sesion" (click)="cerrarSesion()"
                 *ngIf="registroService.logueado()"></button>
@@ -153,7 +149,4 @@
         </div>
     </div>
 </div>
-
-
-
 <app-login></app-login>

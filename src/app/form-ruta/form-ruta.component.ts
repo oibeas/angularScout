@@ -78,7 +78,7 @@ export class FormRutaComponent implements OnInit {
 
     body.latitud = this.arrCoordenadas[0].lat;
     body.longitud = this.arrCoordenadas[0].lng;
-    body.puntos_ruta = coordenadas
+    body.puntos_ruta = coordenadas;
 
     const response = await this.listaRutasService.postForm(body);
     // console.log(response['ruta'].id);

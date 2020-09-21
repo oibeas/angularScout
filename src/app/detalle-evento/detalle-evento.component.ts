@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Evento } from '../models/evento.models';
 import { DetalleEventosService } from '../detalle-eventos.service';
 
@@ -15,7 +15,8 @@ export class DetalleEventoComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private detalleEventosService: DetalleEventosService
+    private detalleEventosService: DetalleEventosService,
+    private router: Router
   ) { }
 
   // ngOnInit(): void {
@@ -34,6 +35,13 @@ export class DetalleEventoComponent implements OnInit {
       this.eventos = await this.detalleEventosService.getById(params.eventoId);
       // console.log(params);
       console.log(this.eventos);
+
+      this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+          return;
+        }
+        window.scrollTo(0, 10)
+      });
 
     })
   }

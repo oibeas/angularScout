@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label>Localización (Ciudad, parque natural, sierra, río cercano)</label>
+                        <label>Localización (Dinos alguna referencia cercana)</label>
                         <input type="text" class="form-control" formControlName="localizacion">
                         <p class="error"
                             *ngIf="formulario.controls.localizacion.errors?.required && formulario.controls.localizacion.touched">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-3">
                     <div class="form-group">
-                        <label>Distancia en KM</label>
+                        <label>Distancia (en KM)</label>
                         <input type="text" class="form-control" formControlName="distancia">
                         <p class="error"
                             *ngIf="formulario.controls.distancia.errors?.required && formulario.controls.distancia.touched">
@@ -99,7 +99,7 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label>Duración</label>
+                        <label>Duración (HH:MM:SS)</label>
                         <input type="text" class="form-control" formControlName="duracion">
                         <p class="error"
                             *ngIf="formulario.controls.duracion.errors?.required && formulario.controls.duracion.touched">
