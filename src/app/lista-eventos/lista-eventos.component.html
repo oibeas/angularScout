@@ -6,21 +6,20 @@
             <div class="col-12">
                 <div class="card mb-3 shadow rounded">
                     <div class="row">
-                        <div class="col-4 d-flex align-items-center justify-content-center">
+                        <div class="col-6 d-flex align-items-center justify-content-center">
                             <a [routerLink]="['/eventos']" class="text-muted ml-2">
                                 <h2>LISTA DE EVENTOS</h2>
                             </a>
                         </div>
-                        <div class="col-8 d-flex align-items-center justify-content-center">
+                        <div class="col-5 d-flex align-items-center justify-content-center">
                             <div class="row">
                                 <div class="col-10">
-                                    <input #buscar class="form-control mx-2" type="search" placeholder="Buscar"
+                                    <input #buscar class="inputbusq" type="search" placeholder="Buscar eventos"
                                         aria-label="Buscar">
                                 </div>
                                 <div class="col-2">
                                     <!-- El decorador #buscar me sirve para pasar el campo input al ts -->
-                                    <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="button"
-                                        (click)="onSubmit()">Buscar</button>
+                                    <button class="lupa" type="button" (click)="onSubmit()"></button>
                                 </div>
                             </div>
                         </div>
@@ -31,8 +30,8 @@
             <div class="row">
                 <div class="col-lg-6 col-xl-4 col-md-6 mb-1 p-1" *ngFor="let evento of eventos">
                     <a [routerLink]="['/eventos/'+evento.id]" class="text-muted">
-                        <div class="card shadow bg-white rounded">
-                            <img [src]="evento.imagenes" class="card-img-top" alt="...">
+                        <div class="card shadow rounded d-flex align-items-center">
+                            <img [src]="evento.imagenes" class="card-img-top mt-2" alt="...">
                             <div class="card-body">
                                 <h6 class="card-title font-weight-bolder">{{evento.nombre}}</h6>
                                 <p class="card-text font-weight-lighter descripcion">{{evento.descripcion}}</p>

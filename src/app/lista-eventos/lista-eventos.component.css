@@ -20,7 +20,9 @@
 }
 
 .card img {
-    width: 50px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
 a {
@@ -41,4 +43,22 @@ a {
 
 .form-control {
     width: 200px;
+}
+
+.inputbusq {
+    font-family: var(--fuentePrincipal);
+    font-size: 20px;
+    width: 150px;
+}
+
+.lupa {
+    height: 30px;
+    width: 30px;
+    background-color: var(--color-verde);
+    border: 0;
+    background-image: url("../../assets/lupa.svg");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
 }

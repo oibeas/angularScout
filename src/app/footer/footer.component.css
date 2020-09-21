@@ -6,7 +6,6 @@ footer {
     background: linear-gradient(59deg, var(--color-verdeoscuro), var(--color-azul));
     /* #3A6073, #16222A */
     color: white;
-    margin-top: 100px;
     font-family: var(--fuentePrincipal);
 }
 
