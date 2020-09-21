@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Ruta } from '../models/ruta.models'
 import { ListaRutasService } from '../lista-rutas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-rutas',
@@ -10,12 +11,23 @@ import { ListaRutasService } from '../lista-rutas.service';
 export class ListaRutasComponent implements OnInit {
 
   rutas: Ruta[];
+  padding: string;
   @ViewChild("buscar") inputBusqueda: ElementRef; //Esto es para pasar el decorador input con el texto del input a la funcion getBusqueda
 
 
-  constructor(private listaRutasService: ListaRutasService) { }
+  constructor(
+    private listaRutasService: ListaRutasService,
+    private router: Router) {
+    this.padding = "";
+  }
 
   ngOnInit(): void {
+    this.padding = "10px";
+    const miroute = this.router.url;
+    if (miroute === '/rutas') {
+      this.padding = "100px";
+    }
+
     this.listaRutasService.getAll()
       .then(response => {
         this.rutas = response;

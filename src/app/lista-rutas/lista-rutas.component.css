@@ -1,7 +1,6 @@
 .container-fluid {
     font-family: var(--fuentePrincipal);
     background-color: var(--color-verde);
-    padding-top: 100px;
 }
 
 .card {

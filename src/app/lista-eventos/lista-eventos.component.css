@@ -19,6 +19,10 @@
     color: var(--color-verdeoscuro);
 }
 
+.card img {
+    width: 50px;
+}
+
 a {
     text-decoration: none;
 }
@@ -37,8 +41,4 @@ a {
 
 .form-control {
     width: 200px;
-}
-
-.container {
-    padding-top: 70px;
 }

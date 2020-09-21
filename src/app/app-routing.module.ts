@@ -24,7 +24,6 @@ const routes: Routes = [
   { path: 'eventos/new', component: FormEventoComponent, canActivate: [LoginGuard] },
   { path: 'eventos/:eventoId', component: DetalleEventoComponent, canActivate: [LoginGuard] },
   { path: 'grupos', component: MapaGruposComponent },
-  // { path: 'grupos/:grupoId', component: ListaRutasComponent },
   { path: 'info', component: InfoMovimientoComponent },
   { path: 'secciones', component: InfoSeccionesComponent },
   { path: '**', redirectTo: '/home' }

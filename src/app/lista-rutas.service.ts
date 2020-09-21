@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Ruta } from './models/ruta.models';
 import { Comentario } from './models/comentario.models';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 
 @Injectable({
@@ -25,7 +25,12 @@ export class ListaRutasService {
   }
 
   postForm(pFormValue): Promise<FormGroup> {
-    return this.httpClient.post<FormGroup>(`${this.baseUrl}/new`, pFormValue).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('UsuarioscRoutes'))['token']
+      })
+    }
+    return this.httpClient.post<FormGroup>(`${this.baseUrl}/new`, pFormValue, httpOptions).toPromise();
   }
 
   getBusqueda(pBusqueda): Promise<Ruta[]> {
@@ -38,7 +43,12 @@ export class ListaRutasService {
   }
 
   postComentario(pRutaId, pFormValue): Promise<Comentario> {
-    return this.httpClient.post<Comentario>(`${this.baseUrl}/${pRutaId}/comentarios`, pFormValue).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('UsuarioscRoutes'))['token']
+      })
+    }
+    return this.httpClient.post<Comentario>(`${this.baseUrl}/${pRutaId}/comentarios`, pFormValue, httpOptions).toPromise();
   }
 
 }

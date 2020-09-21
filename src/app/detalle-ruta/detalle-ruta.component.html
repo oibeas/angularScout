@@ -4,7 +4,7 @@
         <div class="row pt-5">
             <div class=" col-12 col-sm-12 col-lg-9">
                 <div>
-                    <h3 class="mb-4">{{ruta?.nombre}}</h3>
+                    <h3 class="mb-4">{{ruta?.nombre}} - {{ruta.localizacion}}</h3>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
                                     [longitude]="this.lastMarker.split(',')[0]" [agmFitBounds]
                                     [iconUrl]="{url: '../assets/fin-ruta7.png'}">
                                 </agm-marker>
-                                <agm-kml-layer [url]="'https://94426fad8f00.ngrok.io/api/rutas/kml/' + ruta?.id"
+                                <agm-kml-layer [url]="'https://a1020eda0196.ngrok.io/api/rutas/kml/' + ruta?.id"
                                     [clickable]="true">
                                 </agm-kml-layer>
                             </agm-map>
