@@ -24,7 +24,7 @@ Endpoints
 
 > /api/rutas
 
-"get": {
+    "get": {
 
         "id": "numero id",
         
@@ -80,7 +80,7 @@ Endpoints
 
 > /api/eventos
 
-"get": {
+    "get": {
 
         "id": "numero id",
         
