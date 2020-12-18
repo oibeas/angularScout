@@ -1,45 +1,89 @@
 # AngularScout
 
-Aplicacion de una red social para compartir rutas e informacion de grupos scouts.
+_Aplicacion de una red social para compartir rutas e informacion de grupos scouts_
 
-## Front-end
+## Construido con 🛠️
 
-Desarrollado en HTML, CSS y Angular 10
+### Front-end
 
-## Back-end
+* HTML5
+* CSS3
+* Bootstrap
+* Angular 10
 
-Desarrollado en Nodejs y Express.
+`Firebase` https://scroutes-2020.web.app/home
 
-Heroku : https://scroutes.herokuapp.com/
+### Back-end
 
--Front-end: HTML, CSS y Angular 10
--Back-end: JavaScript, NodeJS y ExpressJS
+* Nodejs
+* Express
+
+`Heroku` https://scroutes.herokuapp.com/
+
+Endpoints
+
+> /api/rutas
+
+"get": {
+
+        "id": "numero id",
+        
+        "nombre": "titulo de la ruta",
+        
+        "localizacion": "municipio de inicio",
+        
+        "longitud": "coordenada de inicio longitud",
+        
+        "latitud": "coordenada de inicio latitud",
+        
+        "puntos_ruta": "coordenadas gps de puntos de la ruta",
+        
+        "distancia": "distancia en km",
+        
+        "circular": "tipo de ruta",
+        
+        "altitud_max": "altitud maxima en metros",
+        
+        "altitud_min": "altitud minima en metros",
+        
+        "dificultad": "escala de dificultad",
+        
+        "fecha_creacion": "fecha registro de la ruta, formato unix",
+        
+        "imagenes": {
+        
+            "imagen1": "imagen de la ruta",
+            
+            "imagen2": "imagen de la ruta",
+            
+            "imagen3": "imagen de la ruta",
+            
+            "imagen4": "imagen de la ruta",
+            
+            "imagen5": "imagen de la ruta",
+            
+            "imagen6": "imagen de la ruta",
+            
+                    },
+                    
+        "descripcion": "Descripción de la experiencia",
+        
+        "duracion": "tiempo total de ruta en horas:minutos:segundos",
+        
+        "fk_usuarioId": "relacion de id de usuario",
+        
+        "puntuacion": "puntuacion de 1 a 5",
+        
+        "usuario": "nombre del usuario que la creo"
+        
+        }
+
+
+
+
+
+
 -Database: MySQL.
 
 RESTful backend based on Node.js and MongoDB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
