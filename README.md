@@ -168,7 +168,11 @@ Post:
     > /apì/usuarios/login
 
 
--Database: MySQL.
 
-RESTful backend based on Node.js and MongoDB
+## Autores ✒️
+
+_Proyecto fin de bootcamp DESARROLLLO DE APLICACIONES WEB en NEOLAND_
+
+* **Óscar Ibeas** - *Autor* - [oibeas](https://github.com/oibeas)
+* **Jaime Viana** - *Autor* - [JaimeViana](https://github.com/JaimeViana)
 
