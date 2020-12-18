@@ -78,7 +78,33 @@ Endpoints
         
         }
 
+> /api/eventos
 
+"get": {
+
+        "id": "numero id",
+        
+        "nombre": "titulo del evento",
+        
+        "ciudad": "ciudad del evento",
+        
+        "fecha": "fecha del evento, formato unix",
+        
+        "longitud": "coordenada del evento longitud",
+        
+        "latitud": "coordenada del evento latitud",
+        
+        "sitio_web": "web del evento",
+        
+        "descripcion": "Descripción del evento",
+
+        "imagenes": "imagen del evento",
+        
+        "fk_usuarioId": "relacion de id de usuario creador",
+        
+        "fk_rutaId": "relacion de id con una ruta",
+        
+        }
 
 
 
