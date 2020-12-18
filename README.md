@@ -17,6 +17,7 @@ _Aplicacion de una red social para compartir rutas e informacion de grupos scout
 
 * Nodejs
 * Express
+* MySQL
 
 `Heroku` https://scroutes.herokuapp.com/
 
