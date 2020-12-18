@@ -1,5 +1,23 @@
 # AngularScout
 
+Aplicacion de una red social para compartir rutas e informacion de grupos scouts.
+
+## Front-end
+
+Desarrollado en HTML, CSS y Angular 10
+
+## Back-end
+
+Desarrollado en Nodejs y Express.
+
+Heroku : https://scroutes.herokuapp.com/
+
+-Front-end: HTML, CSS y Angular 10
+-Back-end: JavaScript, NodeJS y ExpressJS
+-Database: MySQL.
+
+RESTful backend based on Node.js and MongoDB
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
 ## Development server
