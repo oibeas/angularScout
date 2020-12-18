@@ -1,4 +1,4 @@
-# AngularScout
+# scRoutes
 
 _Aplicación de una red social para compartir rutas e informacion de grupos scouts_
 
