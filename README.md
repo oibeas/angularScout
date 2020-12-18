@@ -1,6 +1,6 @@
 # AngularScout
 
-_Aplicacion de una red social para compartir rutas e informacion de grupos scouts_
+_Aplicación de una red social para compartir rutas e informacion de grupos scouts_
 
 ## Construido con 🛠️
 
@@ -176,3 +176,16 @@ _Proyecto fin de bootcamp DESARROLLLO DE APLICACIONES WEB en NEOLAND_
 * **Óscar Ibeas** - *Autor* - [oibeas](https://github.com/oibeas)
 * **Jaime Viana** - *Autor* - [JaimeViana](https://github.com/JaimeViana)
 
+## Contribuyendo 🖇️
+
+* Informacion de eventos scout sacada de: [World Scouting](https://www.scout.org/es/api)
+* Rutas de senderismo obtenidas de: [Wikiloc](https://es.wikiloc.com/)
+* Datos de grupos scout obtenidos de: [Scouts de Madrid](https://scoutsdemadrid.org/grupos/)
+
+
+## Expresiones de Gratitud 🎁
+
+Muchas gracias a nuestros tutores, grandes!!!:
+* **Mario Girón** - [mariogiron](https://github.com/mariogiron)
+* **Juan Antonio Pérez** - [Baxone](https://github.com/baxone/)
+Y por supuesto a todos los compañeros del bootcamp10, a ver si algún dia podemos quedar todosy tomarnos unas cervezas 🍺 o un café ☕ ...
