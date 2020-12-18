@@ -144,7 +144,7 @@ Endpoints
     }
     
     
-    Busquedas:
+Busquedas:
     
     > /api/rutas/busqueda/:busqueda
     
@@ -158,7 +158,7 @@ Endpoints
     
     > /api/grupos/busqueda/:busqueda
     
-    Post:
+Post:
     
     > /api/rutas/new
     
