@@ -76,7 +76,8 @@ Endpoints
         
         "usuario": "nombre del usuario que la creo"
         
-        }
+    }
+
 
 > /api/eventos
 
@@ -104,9 +105,43 @@ Endpoints
         
         "fk_rutaId": "relacion de id con una ruta",
         
-        }
+    }
 
 
+
+> /api/grupos
+
+    "get": {
+
+        "id": "numero id",
+        
+        "nombre": "nombre del grupo scout",
+        
+        "fecha_creacion": "año de creacion del grupo",
+        
+        "ciudad": "ciudad del grupo",
+        
+        "direccion": "direccion de la sede",
+        
+        "cp": "codigo postal de la sede",
+        
+        "longitud": "coordenada de la sede longitud",
+        
+        "latitud": "coordenada de la sede latitud",
+        
+        "email": "email de contacto",
+
+        "web": "pagina web del grupo",
+        
+        "twitter": "twitter del grupo",
+        
+        "facebook": "facebook del grupo",
+        
+        "telefono": "telefono de contacto",
+        
+        "asociacion": "asociación a la que pertenece",
+        
+    }
 
 
 -Database: MySQL.
