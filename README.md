@@ -142,6 +142,29 @@ Endpoints
         "asociacion": "asociación a la que pertenece",
         
     }
+    
+    
+    Busquedas:
+    
+    > /api/rutas/busqueda/:busqueda
+    
+    > /api/rutas/busqueda/dificultad/:dificultad
+    
+    > /api/rutas/puntuacion/mejores
+    
+    > /api/eventos/busqueda/:busqueda
+    
+    > /api/eventos/ultimos
+    
+    > /api/grupos/busqueda/:busqueda
+    
+    Post:
+    
+    > /api/rutas/new
+    
+    > /apì/usuarios/registro
+    
+    > /apì/usuarios/login
 
 
 -Database: MySQL.
